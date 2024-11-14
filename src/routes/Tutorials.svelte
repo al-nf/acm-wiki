@@ -8,7 +8,7 @@
     onMount(async () => {
         const response = await fetch('/tutorials/'+name+'.md', {method: "GET"});
         if (response.ok) {
-            const fileContent = await marked(await response.text());
+            const fileContent = await response.text();
             // console.log(fileContent);
             html = await marked.parse(fileContent);
         } else {
