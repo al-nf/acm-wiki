@@ -6,10 +6,13 @@
     export let html: string = "<p>file not found</p>";
 
     onMount(async () => {
-        const response = await fetch('/tutorials/'+name+'.md', {method: "GET"});
+        const response = await fetch('/tutorials/'+name+'.md')
         if (response.ok) {
             const fileContent = await response.text();
-            // console.log(fileContent);
+            if (fileContent.includes('<!doctype html>')) {
+                console.error('Failed to fetch markdown file.');
+                return;
+            }
             html = await marked.parse(fileContent);
         } else {
             console.error('Failed to fetch markdown file.');
