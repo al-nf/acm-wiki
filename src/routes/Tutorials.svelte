@@ -1,6 +1,6 @@
 <script lang="ts">
   import { marked } from "marked";
-  import { onMount } from "svelte";
+  import { afterUpdate, onMount } from "svelte";
 
   export let name: string;
   export let html: string = "<p>file not found</p>";
@@ -37,6 +37,20 @@
     } else {
       console.error("Failed to fetch markdown file.");
     }
+  });
+
+  afterUpdate(() => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
   });
 </script>
 
