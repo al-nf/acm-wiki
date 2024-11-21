@@ -2,10 +2,10 @@
     import {Link} from 'svelte-routing';
 </script>
 
-<div>
+<main>
     <h1>
         Tutorials
     </h1>
     <Link to="tutorials/c">C</Link>
     <Link to="tutorials/java">Java</Link>
-</div>
+</main>

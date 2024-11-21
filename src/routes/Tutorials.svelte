@@ -21,7 +21,7 @@
 
 </script>
 
-<div>
+<main>
     <p>{name}</p>
     <div>{@html html}</div>
-</div>
+</main>
