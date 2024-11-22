@@ -27,7 +27,6 @@
 
     onMount(async () => {
         const response = await fetch("/tutorials/" + name + ".md");
-        console.log(response);
         if (response.ok) {
             const fileContent = await response.text();
             if (fileContent.includes("<!doctype html>")) {
@@ -40,20 +39,23 @@
         }
     });
 
-    $effect(() => {
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach((link) => {
-            link.addEventListener("click", (event) => {
-                event.preventDefault();
-                const targetId = link.getAttribute("href").substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: "smooth" });
-                }
-            });
-        });
-    });
+    function handleLinkClick(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if (
+            target.tagName === "A" &&
+            target.getAttribute("href")?.startsWith("#")
+        ) {
+            event.preventDefault();
+            const id = target.getAttribute("href")?.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }
 </script>
+
+<svelte:window on:click={handleLinkClick} />
 
 <div>
     <p>{name}</p>
