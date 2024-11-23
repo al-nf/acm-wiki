@@ -3,7 +3,9 @@
     import { onMount } from "svelte";
 
     let { name } = $props();
-    let html = $state("<p>file not found</p>");
+    let tutorial = $state("<p>file not found</p>");
+    let solution = $state("<p>file not found</p>");
+    let solutionToggle = $state(false);
 
     const renderer = {
         heading({ tokens, depth }) {
@@ -27,13 +29,19 @@
 
     onMount(async () => {
         const response = await fetch("/tutorials/" + name + ".md");
+        const solutionFile = await fetch("/tutorials/" + name + "_solution.md");
         if (response.ok) {
-            const fileContent = await response.text();
-            if (fileContent.includes("<!doctype html>")) {
+            const responseContent = await response.text();
+            const solutionContent = await solutionFile.text();
+            if (
+                responseContent.includes("<!doctype html>") ||
+                solutionContent.includes("<!doctype html>")
+            ) {
                 console.error("Failed to fetch markdown file.");
                 return;
             }
-            html = await marked.parse(fileContent);
+            tutorial = await marked.parse(responseContent);
+            solution = await marked.parse(solutionContent);
         } else {
             console.error("Failed to fetch markdown file.");
         }
@@ -53,17 +61,35 @@
             }
         }
     }
+
+    function handleSolutionToggle() {
+        solutionToggle = !solutionToggle;
+    }
 </script>
 
 <svelte:window on:click={handleLinkClick} />
 
-<div>
-    <p>{name}</p>
-    <div>{@html html}</div>
+<div class="container">
+    {@html tutorial}
+    <button onclick={handleSolutionToggle}>
+        {#if solutionToggle}
+            Hide Solution
+        {:else}
+            Show Solution
+        {/if}
+    </button>
+    <div class="spacer">
+        {#if solutionToggle}
+            {@html solution}
+        {/if}
+    </div>
 </div>
 
 <style>
-    div {
-        margin: 1rem;
+    .container {
+        margin: 2rem;
+    }
+    .spacer {
+        margin-top: 1rem;
     }
 </style>

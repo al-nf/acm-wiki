@@ -16,7 +16,10 @@ Now, let's get started!
   - [Installation](#installation)
   - [Hello, World](#hello-world)
   - [Variables](#variables)
+  - [Conditionals](#conditionals)
+  - [Loops](#loops)
   - [Functions](#functions)
+  - [Putting It All Together](#putting-it-all-together)
 
 ## Installation
 Python, like most languages, is one that you must install in order to use. It is called a "runtime" language, which means that code can be run without being complied as it is complied in real time. 
@@ -48,6 +51,63 @@ message = "Hello, World!"
 arr = [1, 2, 3, 4, 5]
 ```
 
+## Conditionals
+Conditionals are used to make decisions in your program. Python uses the `if`, `elif`, and `else` keywords to create conditionals.
+
+That could looks something like this:
+```
+if x > 5:
+    print("x is greater than 5")
+elif x < 5:
+    print("x is less than 5")
+else:
+    print("x is equal to 5")
+```
+
+The `if` statement checks if the condition is true, and if it is, it executes the code inside the block. The `elif` statement is short for "else if" and checks another condition if the previous condition is false. The `else` statement is executed if none of the previous conditions are true.
+
+Python also uses a lot of English words for its operators, such as `and`, `or`, `is`, and `not`. These are used to combine multiple conditions in a single statement. For example:
+```
+if x > 5 and x < 10 or not x is 0:
+    print("x is between 5 and 10 or x is not 0")
+```
+
+## Loops
+Loops are used to repeat a block of code multiple times. Python has two main types of loops: `for` loops and `while` loops.
+
+A `for` loop is used to iterate over a sequence of items. A traditional `for` loop in Python looks like this:
+```
+for i in range(5):
+    print(i) # Output: 0, 1, 2, 3, 4
+```
+
+However, Python also has a `for-each` loop that can be used to iterate over a sequence of items. This is done using the `in` keyword:
+```
+arr = [1, 2, 3, 4, 5]
+for item in arr:
+    print(item) # Output: 1, 2, 3, 4, 5
+
+# You can also use the enumerate function to combine the index and item in a loop
+for index, item in enumerate(arr):
+    print(f"Index: {index}, Item: {item}") # Output: Index: 0, Item: 1, Index: 1, Item: 2, etc.
+```
+
+You can also break out of a loop using the `break` keyword, or skip to the next iteration using the `continue` keyword.
+```
+for i in range(10):
+    if i == 5:
+        break
+    print(i) # Output: 0, 1, 2, 3, 4
+```
+
+A `while` loop is used to repeat a block of code until a condition is false. For example:
+```
+x = 0
+while x < 5:
+    print(x)
+    x += 1 # Output: 0, 1, 2, 3, 4
+```
+
 This means you have to be careful what data types you are adding together so the program doesn't crash. Using methods like `str()` and `int()` can change types for a specific operation.
 
 ## Functions
@@ -65,3 +125,12 @@ say_hello("Jake!") # Output: Hello, Jake!
 ```
 
 Another note is that Python uses indentation to determine what is inside the function and what is not. This is different from most languages, which use curly braces `{}` to denote the start and end of a function. Python also doesn't use `;` to end lines, you simply just end the line. This makes Python easy for beginners to learn and read. Also, as seen in the above code, denote comments using `#` for single line comments. However, there is no multi-line comment, so you must use `#` for each line (Hint: in VSCode, highlight the lines and press `Ctrl+/` to comment them all at once).
+
+## Putting It All Together
+Now that we have covered the basics of Python, let's put it all together in a simple program. 
+
+Your job is to make a simple number guessing game. The program should generate a random number between 1 and 100, and the user should guess the number. The program should tell the user if their guess is too high or too low, and keep track of the number of attempts it took to guess the correct number. Once the user guesses the correct number, the program should print a congratulatory message with the number of attempts it took.
+
+So, start by creating a new Python file and writing the code for the number guessing game. There are many ways to implement this, so feel free to get creative with it!
+
+Once you are finished or need some help, check out the final program below. Good luck!
