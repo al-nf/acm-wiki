@@ -6,16 +6,17 @@
 
 <style>
     div {
-        padding: 1rem;
         text-decoration: none;
         color: white;
+        width: 100%;
+        padding: 1rem;
     }
-    div:hover{
-        background-color: #08347A;
+    div:is(:hover, :active){
+        color:aqua;
     }
 </style>
 
-<Link to={route}>
+<Link to={route} class="link">
     <div>
         {name}
     </div>
