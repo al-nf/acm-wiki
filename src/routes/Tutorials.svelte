@@ -33,10 +33,7 @@
         if (response.ok) {
             const responseContent = await response.text();
             const solutionContent = await solutionFile.text();
-            if (
-                responseContent.includes("<!doctype html>") ||
-                solutionContent.includes("<!doctype html>")
-            ) {
+            if (responseContent.includes("<!doctype html>")) {
                 console.error("Failed to fetch markdown file.");
                 return;
             }

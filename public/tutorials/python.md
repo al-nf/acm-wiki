@@ -18,6 +18,7 @@ Now, let's get started!
   - [Variables](#variables)
   - [Conditionals](#conditionals)
   - [Loops](#loops)
+  - [Handling Input](#handling-input)
   - [Functions](#functions)
   - [Putting It All Together](#putting-it-all-together)
 
@@ -109,6 +110,13 @@ while x < 5:
 ```
 
 This means you have to be careful what data types you are adding together so the program doesn't crash. Using methods like `str()` and `int()` can change types for a specific operation.
+
+## Handling Input
+To get input from the user, you can use the `input()` function. This function takes a string as an argument, which is the prompt that will be displayed to the user. For example:
+```
+name = input("What is your name? ")
+print(f"Hello, {name}!") # Input: Jake, Output: Hello, <name>!
+```
 
 ## Functions
 Functions are crucial to any project, so lets take a look at how to create them in Python.
