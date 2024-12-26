@@ -12,10 +12,10 @@ Written by Ivy Zhuang, 2024.
     - [macOS](#macos)
 - [Compiling with GCC](#compiling-with-gcc)
 - [Getting Started](#getting-started)
-- [Input & Output](#input--output)
-- [Variables & Types](#variables--types)
-- [Control Statements](#control-statements)
+- [Variables & Data Types](#variables--data-types)
 - [Arrays](#arrays)
+- [Input & Output](#input--output)
+- [Control Statements](#control-statements)
 - [Functions/Methods](#functionsmethods)
 - [Structs & Unions](#structs--unions)
 - [Pointers](#pointers)
@@ -27,7 +27,15 @@ C is what many regard as the first modern programming language. It's a general p
 
 ## How to run C
 
-After you write any program in C, you have to compile it into an executable file. There are many ways to do so and the easiest is to use an online code editor like [onlinegdb.com](https://www.onlinegdb.com/online_c_compiler). At SCU, we use the GNU Code Compiler (GCC) in our CSEN courses and this tutorial will help you set up GCC on your local computer. If you mainly want to focus on just learning C, another option is [Code Blocks](soon.com) which automatically builds and executes your code locally. **Ultimately, it's up to you on whether you want to use an online or local compiler.**
+After you write any program in C, you have to compile it into an executable file.
+
+1. The easiest is to use an online code editor like [onlinegdb.com](https://www.onlinegdb.com/online_c_compiler). 
+
+2. At SCU, we use the GNU Code Compiler (GCC) in our CSEN courses and this tutorial will help you set up GCC on your local computer.
+
+3. If you mainly want to focus on just learning C, another option is [Code::Blocks](https://www.codeblocks.org/) which automatically runs your code locally without having to download the compiler separately or work in the terminal. 
+
+**Ultimately, it's up to you on how you want to compile and execute your code. You should make this decision based on how you plan on learning C.**
 
 ## Installation
 
@@ -62,10 +70,11 @@ The process of installing GCC on Windows is a bit of a tedious task. We will be 
 ```shell
 brew install gcc
 ```
+3. (Optional) Use the same command to install GDB.
 
-When you're done, type ` gcc --version` and `gdb --version` in the terminal or command prompt to check if everything installed properly.
+When you're done, type ` gcc --version` (and `gdb --version` if you installed it) in the terminal or command prompt to check if everything installed properly.
 
-![Check GCC installation](./c-images/check-installation.png)
+![Check GCC installation on Windows Command Prompt](./c-images/check-installation.png)
 
 ## Compiling with GCC
 
@@ -81,7 +90,7 @@ gcc -o unique unique.c unsorted.c
 ./unique
 ```
 
-If you're unfamiliar with using the terminal, check out MIT's Missing Semester in the [Further Learning](#further-learning) section.
+If you're unfamiliar with using the terminal, check out MIT's Missing Semester in the [Further Learning](#further-learning) section. You can also look at the [GCC manual](https://man7.org/linux/man-pages/man1/gcc.1.html) to learn more about it and its options.
 
 ## Getting Started
 
@@ -97,6 +106,18 @@ Every time you compile your code, make sure to have one main function in one of 
 
 Comments are written in C by starting the line with a double forward slash. A comment is a line of code that is not considered by the compiler, but used to clarify programming logic.
 
+Most methods and operators we need in C have to be included at the top of the file.
+
+```c
+// standard input/output library
+#include <stdio.h>
+// other commonly used libraries
+#include <stdlib.h>
+#include <assert.h>
+#include <stdbool.h>
+#include <string.h>
+```
+
 ## Variables & Data Types
 
 To declare a variable in C:
@@ -107,7 +128,7 @@ int x = 0;
 char y;
 ```
 
-Start the line with the variable type, followed by the variable name. You can optionally include an initial value for the variable. Here is a list of the common primitive (default) types in C:
+Start the line with the variable type then followed by the variable name. You can optionally include an initial value for the variable. Here is a list of some common data types in C:
 
 | Type | Description |
 | - | - |
@@ -130,9 +151,9 @@ float grades[23];
 
 If you want to set initial values for an array, put those values in curly brackets like the first example.
 
-The second example is a special case of a string. In C, strings are simply char arrays. You can set their initial values using quotation marks instead. Also, when you set initial values for an array in C, it's not necessary to set an array size.
+The second example is a special case of a string. In C, strings are simply char arrays. You can set their initial values using quotation marks instead. Additionally, when you set initial values for an array in C, it's not necessary to set an array size.
 
-To access an element in an array, you specify the index in square brackets. Arrays in C are 0-indexed.
+To access an element in an array, you specify the index in square brackets. Arrays in C are 0-indexed. This means that array indices are in range from 0 to length of array - 1.
 
 ```c
 arr[3]; // = 5
@@ -142,7 +163,12 @@ grades[2] = 95.8;
 
 ## Input & Output
 
-To print in C, use the standard input-output library. The first function we will learn is **printf**.
+Remember to include the standard input/output library for this section. The two methods we'll be covering are:
+
+- printf
+- scanf
+
+**Printf** is the output function.
 ```c
 #include <stdio.h>
 int main() {
@@ -150,18 +176,9 @@ int main() {
 }
 ```
 
-Remember to include a semicolon at the end of most lines of code! Every function in C is followed by round brackets (). Printf will output anything in the quotation marks within its round brackets as shown above.
+Printf will output anything in the double quotation marks within its round brackets as shown above.
 
-Also, all the standard input and output function in C have to be **included** at the top of your file.
-
-```c
-// standard input/output
-#include <stdio.h>
-// other commonly used libraries
-#include <stdlib.h>
-#include <assert.h>
-#include <stdbool.h>
-```
+Remember to include a semicolon at the end of most lines of code! Every function in C is followed by round brackets ().
 
 If you are printing multiple lines, make sure to use the escape character **\n** to add a new line. Printf() does not add a new line after it automatically. For example:
 
@@ -186,7 +203,7 @@ char s[] = "The A in ACM stands for Amazing.";
 printf("%s", s);
 ```
 
-Each format specifier has its own designated letter. Here's a list of common specifiers:
+Each format specifier has its own designated character and type. Here's a list of common specifiers:
 
 | Type | Format Specifier |
 | ---- | ---------------- |
@@ -211,11 +228,11 @@ Scanf() will read input in the format in the quotations and then store the input
 
 Control statements are lines of code that dictate whether or how many times a block of code runs. This tutorial will focus on the three most common types of control statements in C.
 
-Firstly, **if statements** control whether a block of code runs.
+Firstly, **if statements** control whether a block of code runs or not.
 
 ```c
-if (n > 100) {
-    printf("%d", n);
+if (grade > 70) {
+    printf("%d passes.", grade);
 }
 ```
 
@@ -224,6 +241,15 @@ In the above example, we check the condition of n greater than 100 and run the c
 If statements can be followed by else-if and else statements which are checked in sequence when previous if/else-if statements don't pass.
 
 ```c
+if (grade > 70) {
+    printf("%d passes.", grade);
+}
+else if (grade > 65) {
+    printf("There's still a tiny chance.");
+}
+else {
+    printf("It's joever.");
+}
 ```
 
 Secondly, **while loops** are structured similarly to if statements except that it will repeatedly run the code block as long as the condition is true. For example:
@@ -243,15 +269,6 @@ for (int i=0; i<n; i++) {
 ```
 The statement in the round brackets defines an integer variable i that starts at 0 which increases by 1 for each iteration until i doesn't fulfill the condition of i < n.
 
-
-```c
-int arr[100];
-```
-Access elements by specifying the index in square brackets. Array indices are in range from 0 to length of array - 1.
-```c
-printf("%d", arr[99]);
-```
-
 ## Functions/Methods
 
 To declare a function in C, you start with the return type followed by the function's name and its parameters in round brackets. The code for the method in indented and sandwiched between curly brackets.
@@ -264,7 +281,7 @@ int average(int a, int b) {
 
 void helloWorldNTimes (int n) {
     for(int i=0;i<n;i++) {
-        printf("Hello World");
+        printf("Hello World\n");
     }
     // void functions don't have to return anything
 }
@@ -272,13 +289,19 @@ void helloWorldNTimes (int n) {
 
 Function names are usually written in camel case (capitalize first letter of each word except the first) in C.
 
+A function's parameters are passed in round brackets after the function name. A parameter is a value you are passing into a function. For each parameter, you have to indicate its type.
+
+If your function's return type is not void, you must return a value of said return type.
+
 ## Structs & Unions
 
-If you have experience with other high-level programming languages, you may be familiar with classes. While C doesn't have classes, structs and unions are quite similar to them.
+If you have experience with other high-level programming languages, you may be familiar with classes. While C doesn't have classes, structs and unions are can be similar to them.
 
 Structs allow you to create a data type consisting of multiple variables bundled together. For example:
 
 ```c
+#include <string.h> // strcpy is from this library
+
 struct Student {
     int age;
     float gpa;
@@ -334,11 +357,11 @@ Whenever you're programming and create new variables, memory has to be allocated
 
 ```c
 int num = 8;
-printf("%p",&num);
+printf("%p\n",&num);
 char name[20];
 scanf("%s", &name); // recall from the input section!
 ```
-This is called **referencing a pointer**. To print a pointer, we can use the %p format specifier. Additionally, recall from that we have to reference the pointer to provide where in memory the input will be stored for scanf().
+This is called **referencing a pointer**. A pointer is what stores the memory address. To print a pointer or memory address, we can use the %p format specifier. Additionally, recall that we use the same ampersand symbol for the second parameter in scanf. This is because we are referencing the pointer to provide where in memory the input will be stored.
 
 We can also pass this memory address to a **pointer variable**. Declaring a pointer variable is similar to declaring any other variable. Just add an asterisk (*) before the variable name.
 
@@ -474,6 +497,7 @@ Our C++ tutorial! (add a link here later)
 
 Useful Practice:
 - [C Quiz from W3Schools](https://www.w3schools.com/c/c_quiz.php)
+- Learn about [C99](https://en.wikipedia.org/wiki/C99) to write more readable code
 
 SCU Resources:
 - Pointers about Pointers Workshop by ACM-W (another link needed here)
