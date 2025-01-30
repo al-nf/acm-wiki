@@ -6,6 +6,7 @@
     let tutorial = $state("<p>file not found</p>");
     let solution = $state("<p>file not found</p>");
     let solutionToggle = $state(false);
+    let showSolution = $state(false);
 
     const renderer = {
         heading({ tokens, depth }) {
@@ -32,13 +33,17 @@
         const solutionFile = await fetch("/tutorials/" + name + "_solution.md");
         if (response.ok) {
             const responseContent = await response.text();
-            const solutionContent = await solutionFile.text();
             if (responseContent.includes("<!doctype html>")) {
                 console.error("Failed to fetch markdown file.");
                 return;
             }
             tutorial = await marked.parse(responseContent);
-            solution = await marked.parse(solutionContent);
+
+            const solutionContent = await solutionFile.text();
+            if (!solutionContent.includes('<meta charset="UTF-8" />')) {
+                solution = await marked.parse(solutionContent);
+                showSolution = true;
+            }
         } else {
             console.error("Failed to fetch markdown file.");
         }
@@ -68,13 +73,15 @@
 
 <div class="container">
     {@html tutorial}
-    <button onclick={handleSolutionToggle}>
-        {#if solutionToggle}
-            Hide Solution
-        {:else}
-            Show Solution
-        {/if}
-    </button>
+    {#if showSolution}
+        <button onclick={handleSolutionToggle}>
+            {#if solutionToggle}
+                Hide Solution
+            {:else}
+                Show Solution
+            {/if}
+        </button>
+    {/if}
     <div class="spacer">
         {#if solutionToggle}
             {@html solution}
