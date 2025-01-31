@@ -4,7 +4,7 @@
     import cytoscape from "cytoscape";
 
     let cy;
-    let csen10 = $state(true);
+    let csen10 = $state(false);
     let csen11 = $state(false);
     let csen12 = $state(false);
     let csen20 = $state(false);
@@ -31,18 +31,18 @@
 
     function getVisibilityMap() {
         return {
-            csen10,
-            csen11,
-            csen12,
-            csen20,
-            csen79,
-            csen146,
-            csen171,
-            csen177,
-            csen179,
-            csen122,
-            csen174,
-            csen175,
+            csen10: !csen10,
+            csen11: !csen11,
+            csen12: !csen12,
+            csen20: !csen20,
+            csen79: !csen79,
+            csen146: !csen146,
+            csen171: !csen171,
+            csen177: !csen177,
+            csen179: !csen179,
+            csen122: !csen122,
+            csen174: !csen174,
+            csen175: !csen175,
         };
     }
 
