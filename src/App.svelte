@@ -6,6 +6,7 @@
   import {Router, Route} from 'svelte-routing';
   import NavBar from './components/NavBar.svelte';
   import Academics from './routes/Academics.svelte';
+  import CSENGlossary from './routes/CSENGlossary.svelte';
 
   export let url = "";
   
@@ -23,6 +24,7 @@
     <Route path="tutorials/:name" let:params> <Tutorials name="{params.name}"/></Route>
     <Route path="/"><Home /></Route>
     <Route path="academics"><Academics/></Route>
+    <Route path="academics/csen-glossary"> <CSENGlossary/> </Route>
   </div>
 </Router>
 
@@ -37,10 +39,6 @@
   }
   :global(a) {
     text-decoration: none;
-  }
-  div {
-    display: inline-flex;
-    flex-direction: row;
   }
   header {
     background-color: #08347A;
