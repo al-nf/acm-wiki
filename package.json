@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
+    "@types/cytoscape": "^3.21.9",
     "svelte": "^5.2.4",
     "vite": "^5.4.11"
   },

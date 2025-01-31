@@ -4,48 +4,82 @@
     import cytoscape from "cytoscape";
 
     let cy;
-    let csen10 = false;
-    let csen11 = false;
-    let csen12 = false;
-    let csen20 = false;
-    let csen79 = false;
-    let csen146 = false;
-    let csen171 = false;
-    let csen177 = false;
-    let csen179 = false;
-    let csen122 = false;
-    let csen174 = false;
-    let csen175 = false;
+    let csen10 = $state(true);
+    let csen11 = $state(false);
+    let csen12 = $state(false);
+    let csen20 = $state(false);
+    let csen79 = $state(false);
+    let csen146 = $state(false);
+    let csen171 = $state(false);
+    let csen177 = $state(false);
+    let csen179 = $state(false);
+    let csen122 = $state(false);
+    let csen174 = $state(false);
+    let csen175 = $state(false);
+    let classes = [];
 
-    $: console.log(csen10);
+    async function fetchClasses() {
+        const response = await fetch("/csenClasses.json");
+        if (response.ok) {
+            const glossary = await response.json();
+            classes = glossary.map((term) => ({
+                data: { id: term.id, name: term.name },
+            }));
+            updateGraph();
+        }
+    }
+
+    function getVisibilityMap() {
+        return {
+            csen10,
+            csen11,
+            csen12,
+            csen20,
+            csen79,
+            csen146,
+            csen171,
+            csen177,
+            csen179,
+            csen122,
+            csen174,
+            csen175,
+        };
+    }
+
+    function updateGraph() {
+        const visibilityMap = getVisibilityMap();
+        const filteredElements = classes.filter(
+            (element) => visibilityMap[element.data.id]
+        );
+        console.log(filteredElements);
+
+        if (cy) {
+            cy.elements().remove();
+            cy.add(filteredElements);
+            cy.layout({ name: "grid" }).run();
+        }
+    }
+
+    $effect(() => {
+        updateGraph();
+    });
 
     onMount(() => {
+        fetchClasses();
         cy = cytoscape({
             container: document.getElementById("graph"),
-            elements: [
-                { data: { id: "a", name: "Node A" } },
-                { data: { id: "b", name: "Node B" } },
-                {
-                    data: {
-                        id: "ab",
-                        source: "a",
-                        target: "b",
-                    },
-                },
-            ],
+            elements: classes,
             style: [
                 {
                     selector: "node",
                     style: {
                         "background-color": "#666",
                         label: "data(name)",
-                        "text-valign": "center",
+                        "text-halign": "center",
+                        "text-valign": "top",
                         color: "#fff",
                         "font-size": "12px",
                         shape: "round-rectangle",
-                        width: "label",
-                        height: "label",
-                        padding: "10px",
                     },
                 },
             ],
