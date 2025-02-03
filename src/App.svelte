@@ -21,9 +21,9 @@
     <Route path="/"><Home /></Route>
     <Route path="test"> <Test/> </Route>
     <Route path="tutorials"> <TutorialHome/></Route>
-    <Route path="tutorials/:name" let:params> <MarkdownPage name="{params.name}" directory="tutorials"/></Route>
+    <Route path="tutorials/:file" let:params> <MarkdownPage path="{params.file}" /></Route>
     <Route path="academics"><Academics/></Route>
-    <Route path="academics/:name" let:params> <MarkdownPage name="{params.name}" directory="academics"/></Route>
+    <Route path="academics/:file" let:params> <MarkdownPage path="{params.file}"/></Route>
 
   </div>
 </Router>

@@ -2,8 +2,8 @@
     import { marked } from "marked";
     import { onMount } from "svelte";
 
-    let { name, directory } = $props();
-    let markdownContent = $state("<p>file not found</p>");
+    let { path } = $props();
+    let markdownContent = $state("<p>Loading...</p>");
     let solution = $state("<p>file not found</p>");
     let solutionToggle = $state(false);
     let showSolution = $state(false);
@@ -29,11 +29,14 @@
     marked.use({ renderer });
 
     onMount(async () => {
-        const response = await fetch(`/${directory}/` + name + ".md");
-        const solutionFile = await fetch(`/${directory}/` + name + "_solution.md");    
+        const response = await fetch(path + ".md");
+        const solutionFile = await fetch(path + "_solution.md");  
+        console.log(response);  
         if (response.ok) {
             const responseContent = await response.text();
             if (responseContent.includes("<!doctype html>")) {
+                markdownContent = "<p>file not found</p>"
+
                 console.error("Failed to fetch markdown file.");
                 return;
             }
@@ -45,6 +48,8 @@
                 showSolution = true;
             }
         } else {
+            markdownContent = "<p>file not found</p>"
+
             console.error("Failed to fetch markdown file.");
         }
     });
