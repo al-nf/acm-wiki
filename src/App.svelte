@@ -2,7 +2,7 @@
   import Home from './routes/Home.svelte';
   import Test from './routes/Test.svelte';
   import TutorialHome from './routes/TutorialHome.svelte';
-  import Tutorials from './routes/Tutorials.svelte';
+  import MarkdownPage from './routes/MarkdownPage.svelte';
   import {Router, Route} from 'svelte-routing';
   import NavBar from './components/NavBar.svelte';
   import Academics from './routes/Academics.svelte';
@@ -18,11 +18,13 @@
   </header>
   
   <div class="container-fluid">
+    <Route path="/"><Home /></Route>
     <Route path="test"> <Test/> </Route>
     <Route path="tutorials"> <TutorialHome/></Route>
-    <Route path="tutorials/:name" let:params> <Tutorials name="{params.name}"/></Route>
-    <Route path="/"><Home /></Route>
+    <Route path="tutorials/:name" let:params> <MarkdownPage name="{params.name}" directory="tutorials"/></Route>
     <Route path="academics"><Academics/></Route>
+    <Route path="academics/:name" let:params> <MarkdownPage name="{params.name}" directory="academics"/></Route>
+
   </div>
 </Router>
 
