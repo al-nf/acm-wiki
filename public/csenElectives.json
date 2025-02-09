@@ -1,0 +1,11 @@
+[
+    {
+        "id": "csen120",
+        "name": "CSEN 120",
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    }
+]

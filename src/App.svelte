@@ -48,6 +48,7 @@
     align-items: flex-start;
     display: flex;
     height: 4rem;
+    z-index: 1000;
   }
   h1 {
     margin-block: auto;

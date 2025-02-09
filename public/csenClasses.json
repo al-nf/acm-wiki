@@ -1,50 +1,141 @@
 [
     {
         "id": "csen10",
-        "name": "CSEN 10"
+        "name": "CSEN 10",
+        "year": 1,
+        "quarter": 1,
+        "preq": []
     },
     {
         "id": "csen11",
-        "name": "CSEN 11"
+        "name": "CSEN 11",
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "csen10"
+        ]
     },
     {
         "id": "csen12",
-        "name": "CSEN 12"
+        "name": "CSEN 12",
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "csen11"
+        ]
     },
     {
         "id": "csen20",
-        "name": "CSEN 20"
+        "name": "CSEN 20",
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen19",
+        "name": "CSEN 19",
+        "year": 2,
+        "quarter": 1,
+        "preq": []
     },
     {
         "id": "csen79",
-        "name": "CSEN 79"
+        "name": "CSEN 79",
+        "year": 2,
+        "quarter": 3,
+        "preq": [
+            "csen12",
+            "csen19"
+        ]
     },
     {
         "id": "csen146",
-        "name": "CSEN 146"
+        "name": "CSEN 146",
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
     },
     {
         "id": "csen171",
-        "name": "CSEN 171"
+        "name": "CSEN 171",
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen79"
+        ]
     },
     {
         "id": "csen177",
-        "name": "CSEN 177"
+        "name": "CSEN 177",
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen20"
+        ]
     },
     {
         "id": "csen179",
-        "name": "CSEN 179"
+        "name": "CSEN 179",
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen12",
+            "csen19"
+        ]
     },
     {
         "id": "csen122",
-        "name": "CSEN 122"
+        "name": "CSEN 122",
+        "year": 4,
+        "quarter": 3,
+        "preq": [
+            "csen20"
+        ]
     },
     {
         "id": "csen174",
-        "name": "CSEN 174"
+        "name": "CSEN 174",
+        "year": 4,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
     },
     {
         "id": "csen175",
-        "name": "CSEN 175"
+        "name": "CSEN 175",
+        "year": 4,
+        "quarter": 2,
+        "preq": [
+            "csen79"
+        ]
+    },
+    {
+        "id": "ecen21",
+        "name": "ECEN 21",
+        "year": 2,
+        "quarter": 2,
+        "preq": []
+    },
+    {
+        "id": "ecen50",
+        "name": "ECEN 50",
+        "year": 2,
+        "quarter": 3,
+        "preq": []
+    },
+    {
+        "id": "ecen153",
+        "name": "ECEN 153",
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "ecen21",
+            "ecen50"
+        ]
     }
 ]
