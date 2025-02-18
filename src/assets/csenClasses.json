@@ -2,6 +2,18 @@
     {
         "id": "csen10",
         "name": "CSEN 10",
+        "title": "Introduction to Programming",
+        "description": "Overview of computing. Introduction to program design and implementation: problem definition, functional decomposition, and design of algorithm programming in PHP and C: variables, data types, control constructs, arrays, strings, and functions. Program development in the Linux environment: editing, compiling, testing, and debugging.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Hayang Kim",
+                "Angela Musurlian"
+            ],
+            "winter": [
+                "Hayang Kim"
+            ]
+        },
         "year": 1,
         "quarter": 1,
         "preq": []
@@ -9,6 +21,23 @@
     {
         "id": "csen11",
         "name": "CSEN 11",
+        "title": "Advanced Programming",
+        "description": "The C Language: structure and style. Types, operators, and expressions. Control flow. Functions. Pointers, arrays, and strings. Structures and dynamic memory allocation. I/O and file processing. Special operators. Recursion and threads. The Unix environment.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Silvia Figueria",
+                "Shiva Jahangiri"
+            ],
+            "winter": [
+                "Silvia Figueria",
+                "Angela Musurlian"
+            ],
+            "spring": [
+                "Hayang Kim",
+                "Shiva Jahangiri"
+            ]
+        },
         "year": 1,
         "quarter": 2,
         "preq": [

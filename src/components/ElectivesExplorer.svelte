@@ -1,20 +1,13 @@
 <script>
-    let selectedElective = $state(null);
-    let electives = $state([]);
-    let { openElectives = $bindable(true) } = $props();
+    import electives from "../assets/csenElectives.json";
 
-    async function fetchElectives() {
-        const response = await fetch("/csenElectives.json");
-        if (response.ok) {
-            electives = await response.json();
-        }
-    }
+    let selectedElective = $state(null);
+    let { openElectives = $bindable(true), boundElectives = $bindable([]) } =
+        $props();
 
     function viewElective(elective) {
         selectedElective = elective;
     }
-
-    fetchElectives();
 </script>
 
 <div class="popup">
@@ -40,6 +33,13 @@
                 <div class="class-info">
                     <h3>{selectedElective.name}</h3>
                     <p>{selectedElective.quarter}</p>
+                    <button
+                        onclick={() =>
+                            (boundElectives = [
+                                ...boundElectives,
+                                selectedElective,
+                            ])}>Add Elective to Schedule</button
+                    >
                 </div>
             {/if}
         </div>
