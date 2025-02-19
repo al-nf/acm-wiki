@@ -1,5 +1,7 @@
 # Javascript Tutorial
 
+Written by Jake Esperson, 2024.
+
 Hello everyone! If you are looking to learn Javacript, you have come to the right place. Javascript is the main language of the web and is used to create interactive websites. In this tutorial, we will cover the basics of Javascript and help you get started with web programming!
 
 First of all, why should you learn Javascript and what can you expect to get out of this?

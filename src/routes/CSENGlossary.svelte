@@ -2,48 +2,60 @@
     import { onMount } from "svelte";
     import GlossarySidebar from "../components/GlossarySidebar.svelte";
     import ElectivesExplorer from "../components/ElectivesExplorer.svelte";
+    import InfoPopup from "../components/InfoPopup.svelte";
     import csenClasses from "../assets/csenClasses.json";
     import csenElectives from "../assets/csenElectives.json";
+    import infoIcon from "../assets/info_icon.png";
     import cytoscape from "cytoscape";
 
     let cy;
     let selectedNode = $state(null);
-    let boundClasses = $state([]);
+    let boundClasses = $state([]); // List of selected classes (called boundClasses because it's actually in the sidebar)
     let classes = [];
 
     let openElectives = $state(false);
-    let boundElectives = $state([]);
+    let boundElectives = $state([]); // Same thing as above, but bound to the electives explorer
 
+    let openInfo = $state(false);
+
+    // Gets the info for classes, electives, and their corresponding prereqs to be used as edges
     function fetchClasses() {
-        classes = csenClasses.map((term) => ({
+        classes = csenClasses.map((cls) => ({
             data: {
-                id: term.id,
-                name: term.name,
-                title: term.title,
-                description: term.description,
-                schedule: term.schedule,
-                year: term.year,
-                quarter: term.quarter,
+                id: cls.id,
+                name: cls.name,
+                title: cls.title,
+                description: cls.description,
+                lab: cls.lab,
+                schedule: cls.schedule,
+                year: cls.year,
+                quarter: cls.quarter,
             },
         }));
-        const prereqs = csenClasses.flatMap((term) =>
-            term.preq.map((prereq) => ({
-                data: {
-                    id: prereq + term.id,
-                    source: prereq,
-                    target: term.id,
-                },
-            }))
-        );
 
         const electiveNodes = csenElectives.map((elective) => ({
             data: {
                 id: elective.id,
                 name: elective.name,
+                title: elective.title,
+                description: elective.description,
+                lab: elective.lab,
+                schedule: elective.schedule,
                 year: elective.year,
                 quarter: elective.quarter,
             },
         }));
+
+        const prereqs = csenClasses.flatMap((cls) =>
+            cls.preq.map((prereq) => ({
+                data: {
+                    id: prereq + cls.id,
+                    source: prereq,
+                    target: cls.id,
+                },
+            }))
+        );
+
         const electivePrereqs = csenElectives.flatMap((elective) =>
             elective.preq.map((prereq) => ({
                 data: {
@@ -63,11 +75,12 @@
         updateGraph();
     }
 
+    // If a class or elective is updated, create a map of what elements should be visible
     function getVisibilityMap() {
         const visibilityMap = {};
 
-        boundClasses.forEach((course) => {
-            visibilityMap[course.id] = true;
+        boundClasses.forEach((cls) => {
+            visibilityMap[cls.id] = true;
         });
 
         boundElectives.forEach((elective) => {
@@ -77,7 +90,9 @@
         return visibilityMap;
     }
 
+    // Ok, there's a lot here
     function updateGraph() {
+        // Gets the visible elements and applies that as a filter to all classes and edges
         const visibilityMap = getVisibilityMap();
         const filteredElements = classes.filter(
             (element) =>
@@ -88,9 +103,12 @@
         );
 
         if (cy) {
+            // Rewrites the graph with the new elements
             cy.elements().remove();
             cy.add(filteredElements);
 
+            // ngl this is a lot of Copilot code, but it basically positions the elements in a grid
+            // according to their year and quarter and uses some math to make them spaced out
             const yearQuarterCounts = {};
             filteredElements.forEach((element) => {
                 if (element.data.year && element.data.quarter) {
@@ -142,6 +160,7 @@
                 }
             });
 
+            // Adds labels for the years and quarters, which are just nodes hidden offscreen
             const labelNodes = [];
             for (let year = 1; year <= 4; year++) {
                 labelNodes.push({
@@ -174,7 +193,9 @@
         }
     }
 
+    // When the page mounts, make the graph and define it's styling
     onMount(() => {
+        document.title = "CSEN Glossary - ACM Wiki";
         fetchClasses();
         cy = cytoscape({
             container: document.getElementById("graph"),
@@ -192,7 +213,7 @@
                         "text-halign": "center",
                         "text-valign": "top",
                         color: "#fff",
-                        "font-size": "12px",
+                        "font-size": "1em",
                         shape: "round-rectangle",
                     },
                 },
@@ -215,7 +236,7 @@
                         "text-halign": "center",
                         "text-valign": "bottom",
                         color: "#fff",
-                        "font-size": "20px",
+                        "font-size": "1.2em",
                         shape: "diamond",
                     },
                 },
@@ -228,13 +249,14 @@
                         "text-halign": "right",
                         "text-valign": "center",
                         color: "#fff",
-                        "font-size": "20px",
+                        "font-size": "1.2em",
                         shape: "diamond",
                     },
                 },
             ],
         });
 
+        // Some event listeners
         cy.on("mouseover", "node", (event) => {
             const node = event.target;
             node.style("background-color", "#08347A");
@@ -248,42 +270,124 @@
         cy.on("tap", "node", (event) => {
             const node = event.target;
             const id = node.id();
-            selectedNode = classes.find((element) => element.data.id === id);
+            selectedNode = classes.find((cls) => cls.data.id === id);
         });
     });
 
+    // This runs every time boundClasses or boundElectives is updated (thanks svelte)
     $effect(() => {
         updateGraph();
     });
 </script>
 
 <div class="glossary">
-    <GlossarySidebar bind:boundClasses bind:openElectives bind:boundElectives />
-    <div class="graph-container">
-        <h1>CSEN Glossary</h1>
-        <div id="graph" class="graph"></div>
-        {#if selectedNode}
-            <div class="node-info">
-                <h2>{selectedNode.data.name} - {selectedNode.data.title}</h2>
-                <p>{selectedNode.data.description}</p>
-                <p>{selectedNode.data.schedule.fall[0]}</p>
+    <!-- if the width is below 1000px it kinda just breaks, maybe something for later -->
+    {#if screen.width < 1000}
+        <h1>
+            The glossary needs to be viewed on a wider screen to work properly
+        </h1>
+    {:else}
+        <GlossarySidebar
+            bind:boundClasses
+            bind:openElectives
+            bind:boundElectives
+        />
+        <div class="graph-container">
+            <div class="graph-header">
+                <h1>CSEN Glossary</h1>
+                <button onclick={() => (openInfo = !openInfo)}>
+                    <img src={infoIcon} alt="information button" />
+                </button>
             </div>
+            <div id="graph" class="graph"></div>
+            {#if selectedNode}
+                <div class="node-info">
+                    <div class="node-info-header">
+                        <h2>
+                            {selectedNode.data.name} - {selectedNode.data.title}
+                        </h2>
+                        {#if selectedNode.data.schedule.fall}
+                            <span>Fall</span>
+                        {/if}
+                        {#if selectedNode.data.schedule.winter}
+                            <span>Winter</span>
+                        {/if}
+                        {#if selectedNode.data.schedule.spring}
+                            <span>Spring</span>
+                        {/if}
+                        <span class={selectedNode.data.lab ? "lab" : "lab-no"}
+                            >{#if !selectedNode.data.lab}
+                                No
+                            {/if} Lab</span
+                        >
+                    </div>
+                    <p>{selectedNode.data.description}</p>
+                    {#if selectedNode.data.schedule.fall}
+                        <p>
+                            <strong>Fall Professors: </strong>
+                            {#each selectedNode.data.schedule.fall as prof, index}
+                                {prof}{#if index < selectedNode.data.schedule.fall.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                    {#if selectedNode.data.schedule.winter}
+                        <p>
+                            <strong>Winter Professors: </strong>
+                            {#each selectedNode.data.schedule.winter as prof, index}
+                                {prof}{#if index < selectedNode.data.schedule.winter.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                    {#if selectedNode.data.schedule.spring}
+                        <p>
+                            <strong>Spring Professors: </strong>
+                            {#each selectedNode.data.schedule.spring as prof, index}
+                                {prof}{#if index < selectedNode.data.schedule.spring.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                </div>
+            {/if}
+        </div>
+        {#if openElectives}
+            <ElectivesExplorer bind:openElectives bind:boundElectives />
         {/if}
-    </div>
-    {#if openElectives}
-        <ElectivesExplorer bind:openElectives bind:boundElectives />
+        {#if openInfo}
+            <InfoPopup bind:openInfo />
+        {/if}
     {/if}
 </div>
 
 <style>
     .glossary {
         display: flex;
-        margin-top: 1rem;
+        margin-top: 1em;
     }
 
     .graph-container {
         width: 80%;
-        padding: 1rem;
+        padding: 1em;
+    }
+
+    .graph-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5em;
+    }
+
+    .graph-header h1 {
+        margin-bottom: 0;
+    }
+
+    .graph-header button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .graph-header button img {
+        width: 2em;
     }
 
     .graph {
@@ -293,7 +397,29 @@
     }
 
     .node-info {
-        margin-top: 1rem;
+        margin-top: 1em;
         color: white;
+    }
+
+    .node-info-header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .node-info-header span {
+        margin-left: 1em;
+        padding: 0.5rem;
+        background-color: #08347a;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .node-info-header span.lab {
+        background-color: green;
+    }
+
+    .node-info-header span.lab-no {
+        background-color: red;
     }
 </style>

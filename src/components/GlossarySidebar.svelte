@@ -1,5 +1,6 @@
 <script>
     import csenClasses from "../assets/csenClasses.json";
+    import trashIcon from "../assets/trash_can_icon.png";
 
     let {
         boundClasses = $bindable([]),
@@ -58,9 +59,19 @@
                 >Open Electives Picker</button
             >
             {#if boundElectives.length > 0}
-                <p>Selected Electives:</p>
+                <h4 style="margin-top: 1em;">Selected Electives:</h4>
                 {#each boundElectives as elective}
-                    <p>{elective.name}</p>
+                    <div class="selected-electives">
+                        <p>{elective.name}</p>
+                        <button
+                            onclick={() =>
+                                (boundElectives = boundElectives.filter(
+                                    (e) => e.id !== elective.id
+                                ))}
+                        >
+                            <img src={trashIcon} alt="trash icon" />
+                        </button>
+                    </div>
                 {/each}
             {/if}
         </div>
@@ -70,12 +81,37 @@
 <style>
     .sidebar {
         width: 20%;
-        padding: 1rem;
+        padding: 1em;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        margin-right: 1rem;
+        margin-right: 1em;
     }
+
+    .selected-electives {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+    }
+
+    .selected-electives p {
+        margin: 0;
+    }
+
+    .selected-electives button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
     h3 {
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    img {
+        width: 1.5em;
+        cursor: pointer;
+        color: white;
     }
 </style>

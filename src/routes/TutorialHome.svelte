@@ -1,5 +1,10 @@
 <script>
     import { Link } from "svelte-routing";
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        document.title = "Tutorials - ACM Wiki";
+    });
 </script>
 
 <div>

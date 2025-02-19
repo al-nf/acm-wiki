@@ -1,5 +1,7 @@
 # Python Tutorial
 
+Written by Jake Esperson, 2024.
+
 Hello everyone! If you are looking to learn Python, you have come to the right place. Python is a powerful language that is easy to learn and fun to use. It is a great language for beginners and experts alike. In this tutorial, we will cover the basics of Python and help you get started with programming.
 
 First of all, why should you learn Python and what can you expect to get out of this?

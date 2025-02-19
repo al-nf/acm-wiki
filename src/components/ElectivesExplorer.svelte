@@ -8,6 +8,11 @@
     function viewElective(elective) {
         selectedElective = elective;
     }
+
+    // This is here because comparing a $state object to an object doesn't work, so I just compared the names
+    function compareElectives(elective) {
+        return elective.name === selectedElective.name;
+    }
 </script>
 
 <div class="popup">
@@ -17,29 +22,77 @@
             onclick={() => (openElectives = !openElectives)}>x</button
         >
         <div class="class-selector">
-            {#each electives as elective}
+            {#each electives as elective, index}
                 <div class="elective-card">
-                    <h3 style="margin: 0;">{elective.name}</h3>
+                    <h4 style="margin: 0;">{elective.name}</h4>
                     <button
                         style="padding: 0.5rem;"
                         onclick={() => viewElective(elective)}>View</button
                     >
                 </div>
+                {#if index !== electives.length - 1}
+                    <div style="border: 1px solid white;"></div>
+                {/if}
             {/each}
         </div>
-        <div class="vertical-bar"></div>
         <div class="class-breakdown">
             {#if selectedElective}
                 <div class="class-info">
-                    <h3>{selectedElective.name}</h3>
-                    <p>{selectedElective.quarter}</p>
-                    <button
-                        onclick={() =>
-                            (boundElectives = [
-                                ...boundElectives,
-                                selectedElective,
-                            ])}>Add Elective to Schedule</button
-                    >
+                    <div class="class-info-header">
+                        <h2>
+                            {selectedElective.name} - {selectedElective.title}
+                        </h2>
+                        {#if selectedElective.schedule.fall}
+                            <span>Fall</span>
+                        {/if}
+                        {#if selectedElective.schedule.winter}
+                            <span>Winter</span>
+                        {/if}
+                        {#if selectedElective.schedule.spring}
+                            <span>Spring</span>
+                        {/if}
+                        <span class={selectedElective.lab ? "lab" : "lab-no"}
+                            >{#if !selectedElective.lab}
+                                No
+                            {/if} Lab</span
+                        >
+                    </div>
+                    <p>{selectedElective.description}</p>
+                    {#if selectedElective.schedule.fall}
+                        <p>
+                            <strong>Fall Professors: </strong>
+                            {#each selectedElective.schedule.fall as prof, index}
+                                {prof}{#if index < selectedElective.schedule.fall.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                    {#if selectedElective.schedule.winter}
+                        <p>
+                            <strong>Winter Professors: </strong>
+                            {#each selectedElective.schedule.winter as prof, index}
+                                {prof}{#if index < selectedElective.schedule.winter.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                    {#if selectedElective.schedule.spring}
+                        <p>
+                            <strong>Spring Professors: </strong>
+                            {#each selectedElective.schedule.spring as prof, index}
+                                {prof}{#if index < selectedElective.schedule.spring.length - 1},&nbsp;{/if}
+                            {/each}
+                        </p>
+                    {/if}
+                    {#if boundElectives.find(compareElectives)}
+                        <button disabled>Elective is in your schedule!</button>
+                    {:else}
+                        <button
+                            onclick={() =>
+                                (boundElectives = [
+                                    ...boundElectives,
+                                    selectedElective,
+                                ])}>Add Elective to Schedule</button
+                        >
+                    {/if}
                 </div>
             {/if}
         </div>
@@ -66,8 +119,7 @@
         border-radius: 5px;
         width: 80%;
         height: 80%;
-        overflow: scroll;
-        padding-left: 1rem;
+        position: relative;
     }
 
     .close-button {
@@ -81,25 +133,63 @@
     }
 
     .class-selector {
-        width: 20%;
+        overflow-y: auto;
+        padding: 1rem;
+        min-width: 20%;
+    }
+
+    .class-selector::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .class-selector::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .class-selector::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 6px;
+    }
+
+    .class-selector::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 
     .elective-card {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
-    .vertical-bar {
-        width: 1px;
-        background-color: white;
-        height: 100%;
-        top: 0;
-        position: sticky;
+    .elective-card h4 {
+        color: white;
     }
 
-    .class-info {
-        padding: 1rem;
+    .class-breakdown {
+        padding: 2rem;
+    }
+
+    .class-info-header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .class-info-header span {
+        margin-left: 1rem;
+        padding: 0.5rem;
+        background-color: #13171f;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .class-info-header span.lab {
+        background-color: green;
+    }
+
+    .class-info-header span.lab-no {
+        background-color: red;
     }
 </style>
