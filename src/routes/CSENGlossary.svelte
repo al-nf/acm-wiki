@@ -147,7 +147,8 @@
                         (positionIndex %
                             Math.ceil(Math.sqrt(numElementsInCell))) *
                             cellWidth +
-                        cellWidth / 2;
+                        cellWidth / 2 +
+                        50;
                     const y =
                         row * rowHeight +
                         Math.floor(
@@ -155,7 +156,8 @@
                                 Math.ceil(Math.sqrt(numElementsInCell))
                         ) *
                             cellHeight +
-                        cellHeight / 2;
+                        cellHeight / 2 +
+                        40;
                     positions[element.data.id] = { x, y };
                 }
             });
@@ -166,7 +168,7 @@
                 labelNodes.push({
                     data: { id: `year-${year}`, name: `Year ${year}` },
                     position: {
-                        x: (year - 1) * colWidth + colWidth / 2,
+                        x: (year - 1) * colWidth + colWidth / 2 + 50,
                         y: -15,
                     },
                 });
