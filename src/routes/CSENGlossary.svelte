@@ -199,7 +199,12 @@
                 labelNodes.push({
                     data: {
                         id: `quarter-${quarter}`,
-                        name: `Quarter ${quarter}`,
+                        name:
+                            quarter === 1
+                                ? "Fall"
+                                : quarter === 2
+                                  ? "Winter"
+                                  : "Spring",
                     },
                     position: {
                         x: 10,
