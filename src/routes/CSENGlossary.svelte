@@ -12,6 +12,7 @@
     let selectedNode = $state(null);
     let boundClasses = $state([]); // List of selected classes (called boundClasses because it's actually in the sidebar)
     let classes = [];
+    let firstUpdate = true;
 
     let openElectives = $state(false);
     let boundElectives = $state([]); // Same thing as above, but bound to the electives explorer
@@ -103,9 +104,22 @@
         );
 
         if (cy) {
-            // Rewrites the graph with the new elements
-            cy.elements().remove();
-            cy.add(filteredElements);
+            const existingElements = cy.elements();
+            const newElements = filteredElements.filter(
+                (element) =>
+                    !existingElements.some((el) => el.id() === element.data.id)
+            );
+
+            // only re-render new elements, keep the old ones where they are
+            cy.add(newElements);
+            cy.remove(
+                existingElements.filter(
+                    (el) =>
+                        !filteredElements.some(
+                            (element) => element.data.id === el.id()
+                        )
+                )
+            );
 
             // ngl this is a lot of Copilot code, but it basically positions the elements in a grid
             // according to their year and quarter and uses some math to make them spaced out
@@ -131,6 +145,8 @@
             const colWidth = containerWidth / 4;
             const rowHeight = containerHeight / 3;
 
+            let trueElements = firstUpdate ? filteredElements : newElements;
+            firstUpdate = false;
             filteredElements.forEach((element) => {
                 if (element.data.year && element.data.quarter) {
                     const key = `${element.data.year}-${element.data.quarter}`;
@@ -157,8 +173,14 @@
                         ) *
                             cellHeight +
                         cellHeight / 2 +
-                        40;
-                    positions[element.data.id] = { x, y };
+                        30;
+                    if (
+                        trueElements.some(
+                            (el) => el.data.id === element.data.id
+                        )
+                    ) {
+                        positions[element.data.id] = { x, y };
+                    }
                 }
             });
 
@@ -169,7 +191,7 @@
                     data: { id: `year-${year}`, name: `Year ${year}` },
                     position: {
                         x: (year - 1) * colWidth + colWidth / 2 + 50,
-                        y: -15,
+                        y: 10,
                     },
                 });
             }
@@ -180,8 +202,8 @@
                         name: `Quarter ${quarter}`,
                     },
                     position: {
-                        x: -15,
-                        y: (quarter - 1) * rowHeight + rowHeight / 2,
+                        x: 10,
+                        y: (quarter - 1) * rowHeight + rowHeight / 2 + 30,
                     },
                 });
             }
@@ -196,6 +218,7 @@
     }
 
     // When the page mounts, make the graph and define it's styling
+    // ts-ignore is used because it errors even though it's valid cytoscape syntax
     onMount(() => {
         document.title = "CSEN Glossary - ACM Wiki";
         fetchClasses();
@@ -208,15 +231,19 @@
                 {
                     selector: "node",
                     style: {
-                        "background-color": "#fff",
-                        label: "data(name)",
-                        "text-outline-width": 1,
-                        "text-outline-color": "#666",
-                        "text-halign": "center",
-                        "text-valign": "top",
-                        color: "#fff",
-                        "font-size": "1em",
+                        width: "label",
+                        height: "label",
+                        content: "data(name)",
                         shape: "round-rectangle",
+                        // @ts-ignore
+                        padding: "0.5em",
+                        "font-size": "1em",
+                        "text-valign": "center",
+                        "text-halign": "center",
+                        "background-color": "#13171f",
+                        "border-width": 1,
+                        "border-color": "#08347a",
+                        color: "#fff",
                     },
                 },
                 {
@@ -226,12 +253,16 @@
                         "line-color": "red",
                         "target-arrow-color": "#ccc",
                         "target-arrow-shape": "triangle",
-                        "curve-style": "segments",
+                        "curve-style": "bezier",
                     },
                 },
                 {
                     selector: "node[id *= 'year']",
                     style: {
+                        width: 1,
+                        height: 1,
+                        // @ts-ignore
+                        padding: "0",
                         label: "data(name)",
                         "text-outline-width": 1,
                         "text-outline-color": "#666",
@@ -245,6 +276,10 @@
                 {
                     selector: "node[id *= 'quarter']",
                     style: {
+                        width: 1,
+                        height: 1,
+                        // @ts-ignore
+                        padding: "0",
                         label: "data(name)",
                         "text-outline-width": 1,
                         "text-outline-color": "#666",
@@ -266,7 +301,7 @@
 
         cy.on("mouseout", "node", (event) => {
             const node = event.target;
-            node.style("background-color", "#fff");
+            node.style("background-color", "#13171f");
         });
 
         cy.on("tap", "node", (event) => {

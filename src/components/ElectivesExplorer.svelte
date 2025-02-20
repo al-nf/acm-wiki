@@ -26,7 +26,7 @@
                 <div class="elective-card">
                     <h4 style="margin: 0;">{elective.name}</h4>
                     <button
-                        style="padding: 0.5rem;"
+                        style="padding: 0.5em;"
                         onclick={() => viewElective(elective)}>View</button
                     >
                 </div>
@@ -124,17 +124,17 @@
 
     .close-button {
         position: absolute;
-        right: 1rem;
-        top: 1rem;
+        right: 0.2em;
+        top: 0.2em;
         background-color: transparent;
         border: none;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.5em;
     }
 
     .class-selector {
         overflow-y: auto;
-        padding: 1rem;
+        padding: 1em;
         min-width: 20%;
     }
 
@@ -159,8 +159,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     .elective-card h4 {
@@ -168,7 +168,7 @@
     }
 
     .class-breakdown {
-        padding: 2rem;
+        padding: 2em;
     }
 
     .class-info-header {
@@ -178,8 +178,8 @@
     }
 
     .class-info-header span {
-        margin-left: 1rem;
-        padding: 0.5rem;
+        margin-left: 1em;
+        padding: 0.5em;
         background-color: #13171f;
         color: white;
         border-radius: 5px;
@@ -191,5 +191,9 @@
 
     .class-info-header span.lab-no {
         background-color: red;
+    }
+
+    .class-info-header h2 {
+        margin: 0;
     }
 </style>
