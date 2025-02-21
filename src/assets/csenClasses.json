@@ -344,5 +344,146 @@
             "ecen21",
             "ecen50"
         ]
+    },
+    {
+        "id": "math11",
+        "name": "MATH 11",
+        "title": "Calculus and Analytic Geometry I",
+        "description": "Limits and differentiation. Methods and applications of differentiation.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 1,
+        "preq": []
+    },
+    {
+        "id": "math12",
+        "name": "MATH 12",
+        "title": "Calculus and Analytic Geometry II",
+        "description": "Further applications of differentiation. Integration and the fundamental theorem of calculus. Methods and applications of integration.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "math11"
+        ]
+    },
+    {
+        "id": "math13",
+        "name": "MATH 13",
+        "title": "Calculus and Analytic Geometry III",
+        "description": "Taylor series, vectors, quadric surfaces, and partial derivatives, including optimization of functions with multiple variables.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "math12"
+        ]
+    },
+    {
+        "id": "math14",
+        "name": "MATH 14",
+        "title": "Calculus and Analytic Geometry IV",
+        "description": "Vector functions, line integrals, multiple integrals, flux, divergence theorem, and Stokes' theorem.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "math53",
+        "name": "MATH 53",
+        "title": "Linear Algebra",
+        "description": "Vector spaces, linear transformations, algebra of matrices, eigenvalues and eigenvectors, and inner products.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 3,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "amth106",
+        "name": "AMTH 106",
+        "title": "Differential Equations",
+        "description": "Explicit solution techniques for ordinary differential equations, systems of first order differential equations, second order equations with constant coefficients, and higher order linear differential equations. Laplace  transform methods. Engineering applications.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 2,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "amth108",
+        "name": "AMTH 108",
+        "title": "Linear Algebra",
+        "description": "Definitions of probability, sets, sample spaces, conditional and total probability, random variables, distributions, functions of random variables, sampling, estimation of parameters, testing hypotheses.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 2,
+        "preq": [
+            "math14"
+        ]
+    },
+    {
+        "id": "chem11",
+        "name": "CHEM 11",
+        "title": "General Chemistry I: Bonding and Energy",
+        "description": "Topics include chemical properties and structure, quantitative problem-solving, chemical bonding, ions, stoichiometry, and an introduction to thermodynamics.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 1,
+        "preq": []
+    },
+    {
+        "id": "phys31",
+        "name": "PHYS 31",
+        "title": "Physics for Scientists and Engineers I",
+        "description": "Measurement. Vectors. Straight-line kinematics. Kinematics in two dimensions. Laws of inertia, mass conservation, and momentum conservation. Center-of-mass and reference frames. Force. Newtonian mechanics and its applications. Gravitation. Kepler's Laws. Work and kinetic energy. Potential energy and energy conservation. Rotational dynamics. Statics.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "math11"
+        ]
+    },
+    {
+        "id": "phys32",
+        "name": "PHYS 32",
+        "title": "Physics for Scientists and Engineers II",
+        "description": "Fluids. Thermodynamics. Simple harmonic motion. Waves. Sound. Interference, diffraction, and polarization. Quantization of light and matter waves. Blackbody radiation and the photoelectric effect. Bragg diffraction and X-ray spectra. Wave-particle duality.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "phys31",
+            "math12"
+        ]
+    },
+    {
+        "id": "phys33",
+        "name": "PHYS 33",
+        "title": "Physics for Scientists and Engineers III",
+        "description": "Electrostatics. Gauss's Law. Potential. Capacitance. Electric current. Resistance. Kirchhoff's rules. DC circuits. AC circuits. Magnetic force. Ampere's Law. Electromagnetic induction.",
+        "lab": true,
+        "schedule": {},
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "phys32",
+            "math13"
+        ]
     }
 ]

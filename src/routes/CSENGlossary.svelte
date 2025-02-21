@@ -245,20 +245,69 @@
                         "font-size": "1em",
                         "text-valign": "center",
                         "text-halign": "center",
-                        "background-color": "#13171f",
                         "border-width": 1,
                         "border-color": "#08347a",
-                        color: "#fff",
+                    },
+                },
+                {
+                    selector: "node[id *= 'csen']",
+                    style: {
+                        backgroundColor: "#d9ead3",
+                        color: "#0f5132",
+                    },
+                },
+                {
+                    selector: "node[id *= 'ecen']",
+                    style: {
+                        backgroundColor: "#fff2cc",
+                        color: "#654500",
+                    },
+                },
+                {
+                    selector: "node[id *= 'math'], node[id *= 'amth']",
+                    style: {
+                        backgroundColor: "#EE8489",
+                        color: "#8B0000",
+                    },
+                },
+                {
+                    selector: "node[id *= 'phys'], node[id *= 'chem']",
+                    style: {
+                        backgroundColor: "#c9daf8",
+                        color: "#005ea2",
                     },
                 },
                 {
                     selector: "edge",
                     style: {
                         width: 3,
-                        "line-color": "red",
                         "target-arrow-color": "#ccc",
                         "target-arrow-shape": "triangle",
                         "curve-style": "bezier",
+                    },
+                },
+                {
+                    selector: "edge[source *= 'csen']",
+                    style: {
+                        "line-color": "#0f5132",
+                    },
+                },
+                {
+                    selector: "edge[source *= 'ecen']",
+                    style: {
+                        "line-color": "#654500",
+                    },
+                },
+                {
+                    selector: "edge[source *= 'math'], edge[source *= 'amth']",
+                    style: {
+                        "line-color": "#8B0000",
+                    },
+                },
+                {
+                    selector: "edge[source *= 'phys'], edge[source *= 'chem']",
+                    style: {
+                        "line-color": "#005ea2",
                     },
                 },
                 {
@@ -299,15 +348,15 @@
         });
 
         // Some event listeners
-        cy.on("mouseover", "node", (event) => {
-            const node = event.target;
-            node.style("background-color", "#08347A");
-        });
+        // cy.on("mouseover", "node", (event) => {
+        //     const node = event.target;
+        //     node.style("background-color", "#08347A");
+        // });
 
-        cy.on("mouseout", "node", (event) => {
-            const node = event.target;
-            node.style("background-color", "#13171f");
-        });
+        // cy.on("mouseout", "node", (event) => {
+        //     const node = event.target;
+        //     node.style("background-color", "#13171f");
+        // });
 
         cy.on("tap", "node", (event) => {
             const node = event.target;
@@ -389,6 +438,10 @@
                         </p>
                     {/if}
                 </div>
+            {:else}
+                <div class="node-info">
+                    <h2>Select a class to view more information</h2>
+                </div>
             {/if}
         </div>
         {#if openElectives}
@@ -434,7 +487,7 @@
 
     .graph {
         width: 75vw;
-        height: 70vh;
+        height: 85vh;
         border: 1px solid #08347a;
     }
 

@@ -16,6 +16,13 @@
 
     const csenCores = classes.filter((course) => course.id.includes("csen"));
     const ecenCores = classes.filter((course) => course.id.includes("ecen"));
+    const mathAmthPhysCores = classes.filter(
+        (course) =>
+            course.id.includes("math") ||
+            course.id.includes("amth") ||
+            course.id.includes("phys") ||
+            course.id.includes("chem")
+    );
 
     $effect(() => {
         let newBoundClasses = [];
@@ -45,6 +52,17 @@
         <div class="sidebar-section">
             <h3>ECEN Cores</h3>
             {#each ecenCores as course}
+                <input
+                    type="checkbox"
+                    id={course.id}
+                    bind:checked={course["checked"]}
+                />
+                <label for={course.id}>{course.name}</label><br />
+            {/each}
+        </div>
+        <div class="sidebar-section">
+            <h3>Other Cores</h3>
+            {#each mathAmthPhysCores as course}
                 <input
                     type="checkbox"
                     id={course.id}
