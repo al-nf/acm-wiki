@@ -1,0 +1,489 @@
+[
+    {
+        "id": "csen10",
+        "name": "CSEN 10",
+        "title": "Introduction to Programming",
+        "description": "Overview of computing. Introduction to program design and implementation: problem definition, functional decomposition, and design of algorithm programming in PHP and C: variables, data types, control constructs, arrays, strings, and functions. Program development in the Linux environment: editing, compiling, testing, and debugging.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Hayang Kim",
+                "Angela Musurlian"
+            ],
+            "winter": [
+                "Hayang Kim"
+            ]
+        },
+        "year": 1,
+        "quarter": 1,
+        "preq": []
+    },
+    {
+        "id": "csen11",
+        "name": "CSEN 11",
+        "title": "Advanced Programming",
+        "description": "The C Language: structure and style. Types, operators, and expressions. Control flow. Functions. Pointers, arrays, and strings. Structures and dynamic memory allocation. I/O and file processing. Special operators. Recursion and threads. The Unix environment.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Silvia Figueria",
+                "Shiva Jahangiri"
+            ],
+            "winter": [
+                "Silvia Figueria",
+                "Angela Musurlian"
+            ],
+            "spring": [
+                "Hayang Kim",
+                "Shiva Jahangiri"
+            ]
+        },
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "csen10"
+        ]
+    },
+    {
+        "id": "csen12",
+        "name": "CSEN 12",
+        "title": "Abstract Data Types and Data Structures",
+        "description": "Data abstraction: abstract data types, information hiding, interface specification. Basic data structures: stacks, queues, lists, binary trees, hashing, tables, graphs; implementation of abstract data types in the C language. Internal sorting: review of selection, insertion, and exchange sorts; quicksort, heapsort; recursion. Analysis of run-time behavior of algorithms; Big-O notation. Introduction to classes in C++",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Xiang Li",
+                "Shiva Jahangiri"
+            ],
+            "winter": [
+                "Xiang Li",
+                "Oana Ignat"
+            ],
+            "spring": [
+                "Hayang Kim",
+                "Oana Ignat",
+                "Yuhong Liu"
+            ]
+        },
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "csen11"
+        ]
+    },
+    {
+        "id": "csen19",
+        "name": "CSEN 19",
+        "title": "Discrete Mathematics",
+        "description": "Predicate logic, methods of proof, sets, functions, sequences and summations, modular arithmetic, cardinality, induction, elementary combinatorial analysis, recursion, and relations.",
+        "lab": false,
+        "schedule": {
+            "fall": [
+                "Josh Grice",
+                "Chi-Yun Hsu",
+                "George Schaeffer"
+            ],
+            "winter": [
+                "Xiang Li",
+                "Chi-Yun Hsu"
+            ],
+            "spring": [
+                "Will Dana",
+                "Reza Shariatmadari"
+            ]
+        },
+        "year": 1,
+        "quarter": 3,
+        "preq": []
+    },
+    {
+        "id": "csen20",
+        "name": "CSEN 20",
+        "title": "Introduction to Embedded Systems",
+        "description": "Introduction to computer organization: CPU, registers, buses, memory, I/O interfaces. Number systems: arithmetic and information representation. Assembly language programming: addressing techniques, arithmetic and logic operations, branching and looping, stack operations, procedure calls, parameter passing, and interrupts. C language programming: pointers, memory management, stack frames, interrupt processing.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Farokh Eskafi",
+                "Yidi Wang"
+            ],
+            "winter": [
+                "Farokh Eskafi",
+                "Michael Schmipf",
+                "Sean Choi"
+            ],
+            "spring": [
+                "Michael Schmipf",
+                "Yan Cui"
+            ]
+        },
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen79",
+        "name": "CSEN 79",
+        "title": "Object-Oriented Programming and Advanced Data Structures",
+        "description": "Object-oriented programming concepts; specification, design, and implementation of data structures with emphasis on software reliability and reusability; design and implementation of static and dynamic data structures, such as sequence, vector, list, stack, queue, deque, priority queue, set, multiset, map, multimap, and graphs; software development using inheritance, templates and iterators; memory allocation and performance; Using data structures in real-world applications; time analysis of data structures; informal use of specifications to guide implementation and validation of programs.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Farokh Eskafi",
+                "Sin-Yaw Wang"
+            ],
+            "winter": [
+                "Farokh Eskafi",
+                "Krishna Kattiyan Ramamoorthy"
+            ],
+            "spring": [
+                "Farokh Eskafi",
+                "Krishna Kattiyan Ramamoorthy"
+            ]
+        },
+        "year": 2,
+        "quarter": 3,
+        "preq": [
+            "csen12",
+            "csen19"
+        ]
+    },
+    {
+        "id": "csen146",
+        "name": "CSEN 146",
+        "title": "Computer Networks",
+        "description": "Data communication: circuit and packet switching, latency and bandwidth, throughput/delay analysis. Application layer: client/server model, socket programming, Web, email, FTP. Transport layer: TCP and UDP, flow control, congestion control, sliding window techniques. Network layer: IP and routing. Data link layer: shared channels, media access control protocols, error detection and correction. Network security. Laboratory consists of projects on software development of network protocols and applications.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Ahmed Amer",
+                "Keyvan Moataghed"
+            ],
+            "winter": [
+                "Salem Al-Agtash"
+            ],
+            "spring": [
+                "Keyvan Moataghed",
+                "Salem Al-Agtash"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen171",
+        "name": "CSEN 171",
+        "title": "Principles of Design and Implementation of Programming Languages",
+        "description": "High-level programming language concepts and constructs. Costs of use and implementation of the constructs. Issues and trade-offs in the design and implementation of programming languages. Critical look at several modern high-level programming languages.",
+        "lab": false,
+        "schedule": {
+            "fall": [
+                "Darren Atkinson"
+            ],
+            "spring": [
+                "Darren Atkinson",
+                "Jordan Randleman"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen79"
+        ]
+    },
+    {
+        "id": "csen177",
+        "name": "CSEN 177",
+        "title": "Operating Systems",
+        "description": "Introduction to computer operating systems. Operating system concepts, computer organization model, storage hierarchy, operating system organization, processes management, interprocess communication and synchronization, memory management and virtual memory, I/O subsystems, and file systems. Design, implementation, and performance issues.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Ahmed Amer",
+                "Navid Shaghaghi"
+            ],
+            "winter": [
+                "Sean Choi",
+                "Yan Cui"
+            ],
+            "spring": [
+                "Sean Choi",
+                "Salem Al-Agtash"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen20"
+        ]
+    },
+    {
+        "id": "csen179",
+        "name": "CSEN 179",
+        "title": "Theory of Algorithms",
+        "description": "Introduction to techniques of design and analysis of algorithms: asymptotic notations and running times of recursive algorithms. Design strategies: brute-force, divide and conquer, decrease and conquer, transform and conquer, dynamic programming, greedy technique. Intractability: P and NP, approximation algorithms.",
+        "lab": false,
+        "schedule": {
+            "fall": [
+                "Sara Krehbiel",
+                "Venkatesh Srinivasan"
+            ],
+            "winter": [
+                "Venkatesh Srinivasan",
+                "Nicholas Tran"
+            ],
+            "spring": [
+                "Venkatesh Srinivasan",
+                "Nicholas Tran"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen12",
+            "csen19"
+        ]
+    },
+    {
+        "id": "csen122",
+        "name": "CSEN 122",
+        "title": "Computer Architecture",
+        "description": "Overview of computer systems. Instruction set architecture. Quantitative analysis. Computer arithmetic. CPU datapath design. CPU control design. Pipelining. Data/control hazards. Memory hierarchies and management. Introduction of multiprocessor systems. Hardware description languages. Laboratory project consists of a design of a pipeline.",
+        "lab": true,
+        "schedule": {
+            "spring": [
+                "Younghyun Cho"
+            ]
+        },
+        "year": 4,
+        "quarter": 3,
+        "preq": [
+            "csen20"
+        ]
+    },
+    {
+        "id": "csen174",
+        "name": "CSEN 174",
+        "title": "Software Engineering",
+        "description": "Software development life cycle. Project teams, documentation, and group dynamics. Software cost estimation. Requirements engineering and design. Data modeling, object modeling, and object-oriented analysis. Object-oriented programming and design. Software testing and quality assurance. Software maintenance.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Kai Lukoff"
+            ],
+            "winter": [
+                "Michael Schimpf"
+            ],
+            "spring": [
+                "Xiao Li"
+            ]
+        },
+        "year": 4,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen175",
+        "name": "CSEN 175",
+        "title": "Introduction to Formal Language Theory and Compiler Construction",
+        "description": "Introduction to formal language concepts: regular expressions and context-free grammars. Compiler organization and construction. Lexical analysis and implementation of scanners. Top-down and bottom-up parsing and implementation of top-down parsers. An overview of symbol table arrangement, run-time memory allocation, intermediate forms, optimization, and code generation.",
+        "lab": true,
+        "schedule": {
+            "winter": [
+                "Darren Atkinson"
+            ],
+            "spring": [
+                "Darren Atkinson"
+            ]
+        },
+        "year": 4,
+        "quarter": 2,
+        "preq": [
+            "csen79"
+        ]
+    },
+    {
+        "id": "ecen21",
+        "name": "ECEN 21",
+        "title": "Introduction to Logic Design",
+        "description": "Boolean functions and their minimization. Combinational circuits: adders, multipliers, multiplexers, decoders. Sequential logic circuits: latches and flip-flops, registers, counters. Memory. Busing. Programmable logic. Use of industry quality CAD tools for schematic capture and HDL in conjunction with FPGAs.",
+        "lab": true,
+        "schedule": {},
+        "year": 2,
+        "quarter": 2,
+        "preq": []
+    },
+    {
+        "id": "ecen50",
+        "name": "ECEN 50",
+        "title": "Electric Circuits I",
+        "description": "Physical basis and mathematical models of circuit components and energy sources. Circuit theorems and methods of analysis are applied to DC and AC circuits.",
+        "lab": true,
+        "schedule": {},
+        "year": 2,
+        "quarter": 3,
+        "preq": []
+    },
+    {
+        "id": "ecen153",
+        "name": "ECEN 153",
+        "title": "Digital Integrated Circuit Design",
+        "description": "Introduction to VLSI design and methodology. Study of basic principles, material properties, fabrication, operation, terminal characteristics, and equivalent circuit models for CMOS digital integrated circuits. Study of CMOS combinational and sequential integrated circuits  and technology scaling. Physical design and layout principles. Interconnect modeling. Semiconductor memories. Use of state-of-the-art CAD tools.",
+        "lab": true,
+        "schedule": {},
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "ecen21",
+            "ecen50"
+        ]
+    },
+    {
+        "id": "math11",
+        "name": "MATH 11",
+        "title": "Calculus and Analytic Geometry I",
+        "description": "Limits and differentiation. Methods and applications of differentiation.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 1,
+        "preq": []
+    },
+    {
+        "id": "math12",
+        "name": "MATH 12",
+        "title": "Calculus and Analytic Geometry II",
+        "description": "Further applications of differentiation. Integration and the fundamental theorem of calculus. Methods and applications of integration.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "math11"
+        ]
+    },
+    {
+        "id": "math13",
+        "name": "MATH 13",
+        "title": "Calculus and Analytic Geometry III",
+        "description": "Taylor series, vectors, quadric surfaces, and partial derivatives, including optimization of functions with multiple variables.",
+        "lab": false,
+        "schedule": {},
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "math12"
+        ]
+    },
+    {
+        "id": "math14",
+        "name": "MATH 14",
+        "title": "Calculus and Analytic Geometry IV",
+        "description": "Vector functions, line integrals, multiple integrals, flux, divergence theorem, and Stokes' theorem.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "math53",
+        "name": "MATH 53",
+        "title": "Linear Algebra",
+        "description": "Vector spaces, linear transformations, algebra of matrices, eigenvalues and eigenvectors, and inner products.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 3,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "amth106",
+        "name": "AMTH 106",
+        "title": "Differential Equations",
+        "description": "Explicit solution techniques for ordinary differential equations, systems of first order differential equations, second order equations with constant coefficients, and higher order linear differential equations. Laplace  transform methods. Engineering applications.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 2,
+        "preq": [
+            "math13"
+        ]
+    },
+    {
+        "id": "amth108",
+        "name": "AMTH 108",
+        "title": "Linear Algebra",
+        "description": "Definitions of probability, sets, sample spaces, conditional and total probability, random variables, distributions, functions of random variables, sampling, estimation of parameters, testing hypotheses.",
+        "lab": false,
+        "schedule": {},
+        "year": 2,
+        "quarter": 2,
+        "preq": [
+            "math14"
+        ]
+    },
+    {
+        "id": "chem11",
+        "name": "CHEM 11",
+        "title": "General Chemistry I: Bonding and Energy",
+        "description": "Topics include chemical properties and structure, quantitative problem-solving, chemical bonding, ions, stoichiometry, and an introduction to thermodynamics.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 1,
+        "preq": []
+    },
+    {
+        "id": "phys31",
+        "name": "PHYS 31",
+        "title": "Physics for Scientists and Engineers I",
+        "description": "Measurement. Vectors. Straight-line kinematics. Kinematics in two dimensions. Laws of inertia, mass conservation, and momentum conservation. Center-of-mass and reference frames. Force. Newtonian mechanics and its applications. Gravitation. Kepler's Laws. Work and kinetic energy. Potential energy and energy conservation. Rotational dynamics. Statics.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 2,
+        "preq": [
+            "math11"
+        ]
+    },
+    {
+        "id": "phys32",
+        "name": "PHYS 32",
+        "title": "Physics for Scientists and Engineers II",
+        "description": "Fluids. Thermodynamics. Simple harmonic motion. Waves. Sound. Interference, diffraction, and polarization. Quantization of light and matter waves. Blackbody radiation and the photoelectric effect. Bragg diffraction and X-ray spectra. Wave-particle duality.",
+        "lab": true,
+        "schedule": {},
+        "year": 1,
+        "quarter": 3,
+        "preq": [
+            "phys31",
+            "math12"
+        ]
+    },
+    {
+        "id": "phys33",
+        "name": "PHYS 33",
+        "title": "Physics for Scientists and Engineers III",
+        "description": "Electrostatics. Gauss's Law. Potential. Capacitance. Electric current. Resistance. Kirchhoff's rules. DC circuits. AC circuits. Magnetic force. Ampere's Law. Electromagnetic induction.",
+        "lab": true,
+        "schedule": {},
+        "year": 2,
+        "quarter": 1,
+        "preq": [
+            "phys32",
+            "math13"
+        ]
+    }
+]

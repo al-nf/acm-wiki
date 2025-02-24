@@ -1,23 +1,28 @@
 <script>
     import { Link } from "svelte-routing";
+    import { onMount } from "svelte";
     import TutorialCard from "../components/TutorialCard.svelte";
+
+    onMount(() => {
+        document.title = "Tutorials - SCU ACM Wiki";
+    });
 
     let tutorials = [
         {
-            "name": "C",
-            "link": "tutorials/c",
-            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
+            name: "C",
+            link: "tutorials/c",
+            imgSrc: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
         },
         {
-            "name": "Python",
-            "link": "tutorials/python",
-            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
+            name: "Python",
+            link: "tutorials/python",
+            imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
         },
         {
-            "name": "JavaScript",
-            "link": "tutorials/javascript",
-            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png"
-        }
+            name: "JavaScript",
+            link: "tutorials/javascript",
+            imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png",
+        },
     ];
 </script>
 
@@ -25,7 +30,11 @@
     <h1>Tutorials</h1>
     <div>
         {#each tutorials as tut}
-        <TutorialCard name={tut["name"]} link={tut["link"]} imgSrc={tut["imgSrc"]}/>
+            <TutorialCard
+                name={tut["name"]}
+                link={tut["link"]}
+                imgSrc={tut["imgSrc"]}
+            />
         {/each}
     </div>
 </main>

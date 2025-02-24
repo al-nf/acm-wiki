@@ -1,0 +1,362 @@
+[
+    {
+        "id": "csen120",
+        "name": "CSEN 120",
+        "title": "Real-Time Systems",
+        "description": "Overview of real-time systems: classification, design issues, and description. Finite state machines and statecharts. Robot programming: odometry and the use of sensors. Real-time programming languages, real-time kernels, and multi-threaded programming. Unified Modeling Language for the design of real-time applications. Performance analysis.",
+        "lab": true,
+        "schedule": {},
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen123",
+        "name": "CSEN 123",
+        "title": "Mechatronics",
+        "description": "Introduction to behavior, design, and integration of electromechanical components and systems. Review of appropriate electronic components/circuitry, mechanism configurations, and programming constructs. Use and integration of transducers, microcontrollers, and actuators.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Maria Kyrarini"
+            ],
+            "winter": [
+                "Andrew Wolfe"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen11",
+            "ecen50"
+        ]
+    },
+    {
+        "id": "csen127",
+        "name": "CSEN 127",
+        "title": "Advanced Logic Design",
+        "description": "Contemporary design of finite-state machines as system controllers using FPGA devices. Minimization techniques, performance analysis, and modular system design. HDL simulation and synthesis.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Andrew Wolfe"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "ecen21"
+        ]
+    },
+    {
+        "id": "csen129",
+        "name": "CSEN 129",
+        "title": "Current Topics in Computer Science and Engineering",
+        "description": "Subjects of current interest. May be taken more than once if topics differ.",
+        "lab": false,
+        "schedule": {
+            "winter": [
+                "Kai Lukoff"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": []
+    },
+    {
+        "id": "csen140",
+        "name": "CSEN 140",
+        "title": "Machine Learning and Data Mining",
+        "description": "Machine learning as a field has become increasingly pervasive, with applications from the Web (search, advertisements, and recommendation) to national security, from analyzing biochemical interactions to traffic and emissions to astrophysics. This course presents an introduction to machine learning and data mining, the study of computing systems that improve their performance through learning from data. This course is designed to cover the main principles, algorithms, and applications of machine learning and data mining.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Yi Fang 🐐"
+            ],
+            "spring": [
+                "David Anastasiu"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen143",
+        "name": "CSEN 143",
+        "title": "Internet of Things",
+        "description": "Applications and architectures of IoT systems. Embedded and low-power processors. Interfacing digital sensors and actuators. Interrupts and exceptions in a concurrent world. Operating systems for resource-constrained devices. Multitasking and memory allocation. Wireless channel access, low-power wireless, real-time and reliable communication. IP networking, protocol translation and compression. Multi-hop communication. Application layer protocols. Security protocols and architectures. Cloud, edge, and fog computing.",
+        "lab": true,
+        "schedule": {},
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen146",
+            "csen177"
+        ]
+    },
+    {
+        "id": "csen145",
+        "name": "CSEN 145",
+        "title": "Introduction to Parallel Computing",
+        "description": "How to effectively program parallel computers, from smartphones to large clusters. Types of parallel architectures, routing, data parallel, shared-memory, and message-passing parallel programming, load balancing, evaluation of parallel algorithms, advanced topics. Case studies in real-world data analytics, including parallel algorithms for sparse matrix and graph operations. Hands-on lab on multi-core CPUs and many-core GPUs.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "David Anastasiu"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen148",
+        "name": "CSEN 148",
+        "title": "Computer Graphics Systems",
+        "description": "Interactive graphic systems. Graphics primitives, line and shape generation. Simple transforming and modeling. Efficiency analysis and modular design. Interactive input techniques. Three-dimensional transformations and viewing, hidden surface removal. Color graphics, animation, real-time display considerations. Parametric surface definition and introduction to shaded-surface algorithms. Offered in alternate years.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Yuan Wang"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen150",
+        "name": "CSEN 150",
+        "title": "Introduction to Information Security",
+        "description": "Security principles; operating system security: process security, file system security, application program security; access control models: DAC, MAC, RBAC, ABAC; Malware: virus, Trojan, worms, rootkits, botnets, adware, spyware; network security attacks and defenses at different layers; web security: attacks on clients and servers; cryptographic basis: symmetric cryptography, public-key cryptography, cryptographic hash functions, digital signature; Application security: database security, email security, social networking security.",
+        "lab": true,
+        "schedule": {
+            "winter": [
+                "Yuhong Liu"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen146"
+        ]
+    },
+    {
+        "id": "csen152",
+        "name": "CSEN 152",
+        "title": "Introduction to Computer Forensics",
+        "description": "Procedures for identification, preservation, and extraction of electronic evidence. Auditing and investigation of network and host system intrusions, analysis and documentation of information gathered, and preparation of expert testimonial evidence. Forensic tools and resources for system administrators and information system security officers. Ethics, law, policy, and standards concerning digital evidence.",
+        "lab": true,
+        "schedule": {},
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12",
+            "csen20"
+        ]
+    },
+    {
+        "id": "csen160",
+        "name": "CSEN 160",
+        "title": "Object-Oriented Analysis, Design, and Programming",
+        "description": "Four important aspects of object-oriented application development are covered: fundamental concepts of the OO paradigm, building analysis and design models using UML, implementation using Java, and testing object-oriented systems.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Michael Schimpf"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen79"
+        ]
+    },
+    {
+        "id": "csen161",
+        "name": "CSEN 161",
+        "title": "Web Development",
+        "description": "Fundamentals of the World Wide Web (WWW) and the technologies that are required to develop Web-based applications. Topics cover HTML5, CSS, JavaScript, PHP, MYSQL and XML.",
+        "lab": true,
+        "schedule": {
+            "fall": [
+                "Arman Elahi"
+            ],
+            "winter": [
+                "Navid Shaghaghi"
+            ],
+            "spring": [
+                "Navid Shaghaghi"
+            ]
+        },
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen162",
+        "name": "CSEN 162",
+        "title": "Web Infrastructure",
+        "description": "History and overview of World Wide Web technology. Web protocols. Web Navigation. Web caching and load balancing. P2P and Content Delivery Networks. Streaming technologies.",
+        "lab": false,
+        "schedule": {
+            "spring": [
+                "Angela Musurlian"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen146"
+        ]
+    },
+    {
+        "id": "csen163",
+        "name": "CSEN 163",
+        "title": "Web Usability",
+        "description": "Principles of user-centered design. Principles of human computer interaction. Fundamental theories in cognition and human factors: information processing, perception and representation, constructivist and ecological theories, Gestalt laws of perceptual organization. Usability engineering: user research, user profiling, method for evaluating user interface, usability testing. Prototyping in user interface: process, methods of evaluating and testing. Inclusive design in user interface design: accessibility issues, compliance with section 508 of Rehabilitation Act.",
+        "lab": true,
+        "schedule": {
+            "winter": [
+                "Sharon Hsiao"
+            ],
+            "spring": [
+                "Sharon Hsiao"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen164",
+        "name": "CSEN 164",
+        "title": "Advanced Web Development",
+        "description": "Advanced topics in Web Application Development; Development with Web Frameworks, implementing Web services and management of Web security.",
+        "lab": true,
+        "schedule": {
+            "spring": [
+                "Yuan Wang"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen161"
+        ]
+    },
+    {
+        "id": "csen165",
+        "name": "CSEN 165",
+        "title": "Introduction to 3D Animation & Modeling/Modeling & Control Rigid Body Dynamics",
+        "description": "Mathematical and physical principles of motion of rigid bodies, including movement, acceleration, inertia, and collision. Modeling of rigid body dynamics for three-dimensional graphic simulation; controlling the motion of rigid bodies in robotic applications. May be repeated twice for credit.",
+        "lab": false,
+        "schedule": {
+            "spring": [
+                "Danielle Heitmuller"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": []
+    },
+    {
+        "id": "csen166",
+        "name": "CSEN 166",
+        "title": "Artificial Intelligence",
+        "description": "Philosophical foundations of artificial intelligence, problem solving, knowledge and reasoning, neural networks, and other learning methods.",
+        "lab": true,
+        "schedule": {
+            "winter": [
+                "Maya Ackerman"
+            ],
+            "spring": [
+                "Maya Ackerman"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen12",
+            "csen19"
+        ]
+    },
+    {
+        "id": "csen168",
+        "name": "CSEN 168",
+        "title": "Mobile Application Development",
+        "description": "Design and implementation of applications running on a mobile platform such as smartphones and tablets. Programming languages and development tools for mobile SDKs. Writing code for Peripherals-GPS, accelerometer, touchscreen. Optimizing user interface for a small screen. Effective memory management on a constrained device. Embedded graphics. Persistent data storage.",
+        "lab": true,
+        "schedule": {},
+        "year": 3,
+        "quarter": 1,
+        "preq": [
+            "csen20",
+            "csen79"
+        ]
+    },
+    {
+        "id": "csen169",
+        "name": "CSEN 169",
+        "title": "Web Search and Information Retrieval",
+        "description": "Theory, design, and implementation of information systems that process, organize, analyze large-scale information on the Web. Search engine technology, recommender systems, cloud computing, social network analysis.",
+        "lab": false,
+        "schedule": {
+            "winter": [
+                "Yi Fang 🐐"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen178",
+        "name": "CSEN 178",
+        "title": "Introduction to Database Systems",
+        "description": "ER diagrams and the relational data model. Database design techniques based on integrity constraints and normalization. Database security and index structures. SQL and DDL. Transaction processing basics.",
+        "lab": true,
+        "schedule": {
+            "winter": [
+                "Shiva Jahangiri"
+            ]
+        },
+        "year": 3,
+        "quarter": 2,
+        "preq": [
+            "csen12"
+        ]
+    },
+    {
+        "id": "csen180",
+        "name": "CSEN 180",
+        "title": "Introduction to Information Storage",
+        "description": "Storage hierarchy. Caching. Design of memory and storage devices, with particular emphasis on magnetic disks and storage-class memories. Error detection, correction and avoidance fundamentals. Disk arrays. Storage interfaces and buses. Network attached and distributed storage, interaction of economy and technological innovation.",
+        "lab": false,
+        "schedule": {
+            "spring": [
+                "Ahmed Amer"
+            ]
+        },
+        "year": 3,
+        "quarter": 3,
+        "preq": [
+            "csen12"
+        ]
+    }
+]
