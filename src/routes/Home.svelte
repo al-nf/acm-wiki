@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        document.title = "ACM Wiki";
+        document.title = "SCU ACM Wiki";
     });
 </script>
 

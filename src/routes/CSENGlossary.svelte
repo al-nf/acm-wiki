@@ -225,7 +225,7 @@
     // When the page mounts, make the graph and define it's styling
     // ts-ignore is used because it errors even though it's valid cytoscape syntax
     onMount(() => {
-        document.title = "CSEN Glossary - ACM Wiki";
+        document.title = "CSEN Glossary - SCU ACM Wiki";
         fetchClasses();
         cy = cytoscape({
             container: document.getElementById("graph"),
@@ -346,17 +346,6 @@
                 },
             ],
         });
-
-        // Some event listeners
-        // cy.on("mouseover", "node", (event) => {
-        //     const node = event.target;
-        //     node.style("background-color", "#08347A");
-        // });
-
-        // cy.on("mouseout", "node", (event) => {
-        //     const node = event.target;
-        //     node.style("background-color", "#13171f");
-        // });
 
         cy.on("tap", "node", (event) => {
             const node = event.target;

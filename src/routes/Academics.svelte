@@ -3,7 +3,7 @@
     import { Link } from "svelte-routing";
 
     onMount(() => {
-        document.title = "Academics - ACM Wiki";
+        document.title = "Academics - SCU ACM Wiki";
     });
 </script>
 

@@ -29,7 +29,7 @@
     marked.use({ renderer });
 
     onMount(async () => {
-        document.title = `${name.charAt(0).toUpperCase() + name.slice(1)} Tutorial - ACM Wiki`;
+        document.title = `${name.charAt(0).toUpperCase() + name.slice(1)} Tutorial - SCU ACM Wiki`;
         const response = await fetch("/tutorials/" + name + ".md");
         const solutionFile = await fetch("/tutorials/" + name + "_solution.md");
         if (response.ok) {
