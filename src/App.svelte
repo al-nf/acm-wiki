@@ -1,6 +1,5 @@
 <script lang="js">
   import Home from './routes/Home.svelte';
-  import Test from './routes/Test.svelte';
   import TutorialHome from './routes/TutorialHome.svelte';
   import Tutorials from './routes/Tutorials.svelte';
   import {Router, Route} from 'svelte-routing';
@@ -9,17 +8,37 @@
   import CSENGlossary from './routes/CSENGlossary.svelte';
 
   export let url = "";
+  let hidden = true;
+
+  function scrollContainer() {
+    return document.documentElement || document.body;
+  }
+
+  function handleOnScroll() {
+    if (!scrollContainer()) {
+      return;
+    }
+
+    if (scrollContainer().scrollTop > 150) {
+      hidden = false;
+    } else {
+      hidden = true;
+    }
+  }
+
   
 </script>
+
+<svelte:window on:scroll={handleOnScroll} />
 
 <Router {url}>
   <header>
     <h1>ACM Wiki</h1>
     <NavBar/>
   </header>
-  
+  <button class="up" on:click={() => {document.body.scrollIntoView()}} class:hidden>↑</button>
+
   <div class="container-fluid">
-    <Route path="test"> <Test/> </Route>
     <Route path="tutorials"> <TutorialHome/></Route>
     <Route path="tutorials/:name" let:params> <Tutorials name="{params.name}"/></Route>
     <Route path="/"><Home /></Route>
@@ -42,7 +61,6 @@
   }
   header {
     background-color: #08347A;
-    position: sticky;
     top: 0;
     flex-direction: row;
     align-items: flex-start;
@@ -53,4 +71,20 @@
   h1 {
     margin-block: auto;
     margin-inline: 1rem;
-  }</style>
+  }
+  button.up {
+    position: fixed;
+    border-radius: 50%;
+    display: block;
+    height: 2em;
+    width: 2em;
+    bottom: 2rem;
+    align-content: center;
+    right: 2rem;
+    padding: 0;
+  }
+  button.up.hidden {
+    display: none;
+  }
+
+</style>
