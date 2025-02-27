@@ -18,16 +18,9 @@
         "title": "Mechatronics",
         "description": "Introduction to behavior, design, and integration of electromechanical components and systems. Review of appropriate electronic components/circuitry, mechanism configurations, and programming constructs. Use and integration of transducers, microcontrollers, and actuators.",
         "lab": true,
-        "schedule": {
-            "fall": [
-                "Maria Kyrarini"
-            ],
-            "winter": [
-                "Andrew Wolfe"
-            ]
-        },
+        "schedule": {},
         "year": 3,
-        "quarter": 2,
+        "quarter": 1,
         "preq": [
             "csen11",
             "ecen50"
@@ -39,11 +32,7 @@
         "title": "Advanced Logic Design",
         "description": "Contemporary design of finite-state machines as system controllers using FPGA devices. Minimization techniques, performance analysis, and modular system design. HDL simulation and synthesis.",
         "lab": true,
-        "schedule": {
-            "fall": [
-                "Andrew Wolfe"
-            ]
-        },
+        "schedule": {},
         "year": 3,
         "quarter": 1,
         "preq": [
@@ -57,6 +46,9 @@
         "description": "Subjects of current interest. May be taken more than once if topics differ.",
         "lab": false,
         "schedule": {
+            "fall": [
+                "Darren Atkinson"
+            ],
             "winter": [
                 "Kai Lukoff"
             ]
@@ -74,6 +66,9 @@
         "schedule": {
             "fall": [
                 "Yi Fang 🐐"
+            ],
+            "winter": [
+                "David Anastasiu"
             ],
             "spring": [
                 "David Anastasiu"
@@ -93,7 +88,7 @@
         "lab": true,
         "schedule": {},
         "year": 3,
-        "quarter": 3,
+        "quarter": 1,
         "preq": [
             "csen146",
             "csen177"
@@ -105,11 +100,7 @@
         "title": "Introduction to Parallel Computing",
         "description": "How to effectively program parallel computers, from smartphones to large clusters. Types of parallel architectures, routing, data parallel, shared-memory, and message-passing parallel programming, load balancing, evaluation of parallel algorithms, advanced topics. Case studies in real-world data analytics, including parallel algorithms for sparse matrix and graph operations. Hands-on lab on multi-core CPUs and many-core GPUs.",
         "lab": true,
-        "schedule": {
-            "fall": [
-                "David Anastasiu"
-            ]
-        },
+        "schedule": {},
         "year": 3,
         "quarter": 1,
         "preq": [
@@ -140,12 +131,12 @@
         "description": "Security principles; operating system security: process security, file system security, application program security; access control models: DAC, MAC, RBAC, ABAC; Malware: virus, Trojan, worms, rootkits, botnets, adware, spyware; network security attacks and defenses at different layers; web security: attacks on clients and servers; cryptographic basis: symmetric cryptography, public-key cryptography, cryptographic hash functions, digital signature; Application security: database security, email security, social networking security.",
         "lab": true,
         "schedule": {
-            "winter": [
+            "spring": [
                 "Yuhong Liu"
             ]
         },
         "year": 3,
-        "quarter": 2,
+        "quarter": 3,
         "preq": [
             "csen146"
         ]
@@ -184,12 +175,12 @@
     {
         "id": "csen161",
         "name": "CSEN 161",
-        "title": "Web Development",
+        "title": "Web Programming I",
         "description": "Fundamentals of the World Wide Web (WWW) and the technologies that are required to develop Web-based applications. Topics cover HTML5, CSS, JavaScript, PHP, MYSQL and XML.",
         "lab": true,
         "schedule": {
             "fall": [
-                "Arman Elahi"
+                "Navid Shaghaghi"
             ],
             "winter": [
                 "Navid Shaghaghi"
@@ -199,7 +190,7 @@
             ]
         },
         "year": 3,
-        "quarter": 1,
+        "quarter": 2,
         "preq": [
             "csen12"
         ]
@@ -228,10 +219,10 @@
         "description": "Principles of user-centered design. Principles of human computer interaction. Fundamental theories in cognition and human factors: information processing, perception and representation, constructivist and ecological theories, Gestalt laws of perceptual organization. Usability engineering: user research, user profiling, method for evaluating user interface, usability testing. Prototyping in user interface: process, methods of evaluating and testing. Inclusive design in user interface design: accessibility issues, compliance with section 508 of Rehabilitation Act.",
         "lab": true,
         "schedule": {
-            "winter": [
+            "fall": [
                 "Sharon Hsiao"
             ],
-            "spring": [
+            "winter": [
                 "Sharon Hsiao"
             ]
         },
@@ -244,7 +235,7 @@
     {
         "id": "csen164",
         "name": "CSEN 164",
-        "title": "Advanced Web Development",
+        "title": "Web Programming II",
         "description": "Advanced topics in Web Application Development; Development with Web Frameworks, implementing Web services and management of Web security.",
         "lab": true,
         "schedule": {
@@ -264,13 +255,9 @@
         "title": "Introduction to 3D Animation & Modeling/Modeling & Control Rigid Body Dynamics",
         "description": "Mathematical and physical principles of motion of rigid bodies, including movement, acceleration, inertia, and collision. Modeling of rigid body dynamics for three-dimensional graphic simulation; controlling the motion of rigid bodies in robotic applications. May be repeated twice for credit.",
         "lab": false,
-        "schedule": {
-            "spring": [
-                "Danielle Heitmuller"
-            ]
-        },
+        "schedule": {},
         "year": 3,
-        "quarter": 3,
+        "quarter": 1,
         "preq": []
     },
     {
@@ -280,11 +267,14 @@
         "description": "Philosophical foundations of artificial intelligence, problem solving, knowledge and reasoning, neural networks, and other learning methods.",
         "lab": true,
         "schedule": {
+            "fall": [
+                "Ying Liu"
+            ],
             "winter": [
                 "Maya Ackerman"
             ],
             "spring": [
-                "Maya Ackerman"
+                "Ying Liu"
             ]
         },
         "year": 3,
@@ -300,9 +290,13 @@
         "title": "Mobile Application Development",
         "description": "Design and implementation of applications running on a mobile platform such as smartphones and tablets. Programming languages and development tools for mobile SDKs. Writing code for Peripherals-GPS, accelerometer, touchscreen. Optimizing user interface for a small screen. Effective memory management on a constrained device. Embedded graphics. Persistent data storage.",
         "lab": true,
-        "schedule": {},
+        "schedule": {
+            "spring": [
+                "Farokh Eskafi"
+            ]
+        },
         "year": 3,
-        "quarter": 1,
+        "quarter": 3,
         "preq": [
             "csen20",
             "csen79"
@@ -311,7 +305,7 @@
     {
         "id": "csen169",
         "name": "CSEN 169",
-        "title": "Web Search and Information Retrieval",
+        "title": "Web Information Management",
         "description": "Theory, design, and implementation of information systems that process, organize, analyze large-scale information on the Web. Search engine technology, recommender systems, cloud computing, social network analysis.",
         "lab": false,
         "schedule": {
@@ -332,12 +326,12 @@
         "description": "ER diagrams and the relational data model. Database design techniques based on integrity constraints and normalization. Database security and index structures. SQL and DDL. Transaction processing basics.",
         "lab": true,
         "schedule": {
-            "winter": [
+            "spring": [
                 "Shiva Jahangiri"
             ]
         },
         "year": 3,
-        "quarter": 2,
+        "quarter": 3,
         "preq": [
             "csen12"
         ]
@@ -348,13 +342,9 @@
         "title": "Introduction to Information Storage",
         "description": "Storage hierarchy. Caching. Design of memory and storage devices, with particular emphasis on magnetic disks and storage-class memories. Error detection, correction and avoidance fundamentals. Disk arrays. Storage interfaces and buses. Network attached and distributed storage, interaction of economy and technological innovation.",
         "lab": false,
-        "schedule": {
-            "spring": [
-                "Ahmed Amer"
-            ]
-        },
+        "schedule": {},
         "year": 3,
-        "quarter": 3,
+        "quarter": 1,
         "preq": [
             "csen12"
         ]

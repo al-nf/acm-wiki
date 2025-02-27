@@ -26,16 +26,13 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Silvia Figueria",
-                "Shiva Jahangiri"
+                "Silvia Figueria"
             ],
             "winter": [
-                "Silvia Figueria",
                 "Angela Musurlian"
             ],
             "spring": [
-                "Hayang Kim",
-                "Shiva Jahangiri"
+                "Hayang Kim"
             ]
         },
         "year": 1,
@@ -52,17 +49,16 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Xiang Li",
-                "Shiva Jahangiri"
-            ],
-            "winter": [
-                "Xiang Li",
-                "Oana Ignat"
-            ],
-            "spring": [
-                "Hayang Kim",
                 "Oana Ignat",
                 "Yuhong Liu"
+            ],
+            "winter": [
+                "Oana Ignat",
+                "Yuhong Liu"
+            ],
+            "spring": [
+                "Xiang Li",
+                "Maya Ackerman"
             ]
         },
         "year": 1,
@@ -105,12 +101,10 @@
         "schedule": {
             "fall": [
                 "Farokh Eskafi",
-                "Yidi Wang"
+                "Yan Cui"
             ],
             "winter": [
-                "Farokh Eskafi",
-                "Michael Schmipf",
-                "Sean Choi"
+                "Yidi Wang"
             ],
             "spring": [
                 "Michael Schmipf",
@@ -131,15 +125,12 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Farokh Eskafi",
-                "Sin-Yaw Wang"
+                "Behnam Dezfouli"
             ],
             "winter": [
-                "Farokh Eskafi",
-                "Krishna Kattiyan Ramamoorthy"
+                "Farokh Eskafi"
             ],
             "spring": [
-                "Farokh Eskafi",
                 "Krishna Kattiyan Ramamoorthy"
             ]
         },
@@ -158,11 +149,10 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Ahmed Amer",
-                "Keyvan Moataghed"
+                "Ahmed Amer"
             ],
             "winter": [
-                "Salem Al-Agtash"
+                "Keyvan Moataghed"
             ],
             "spring": [
                 "Keyvan Moataghed",
@@ -183,11 +173,7 @@
         "lab": false,
         "schedule": {
             "fall": [
-                "Darren Atkinson"
-            ],
-            "spring": [
-                "Darren Atkinson",
-                "Jordan Randleman"
+                "Krishna Kattiyan Ramamoorthy"
             ]
         },
         "year": 3,
@@ -204,16 +190,16 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Ahmed Amer",
-                "Navid Shaghaghi"
+                "Salem Al-Agtash",
+                "Yan Cui"
             ],
             "winter": [
-                "Sean Choi",
+                "Salem Al-Agtash",
                 "Yan Cui"
             ],
             "spring": [
-                "Sean Choi",
-                "Salem Al-Agtash"
+                "Salem Al-Agtash",
+                "Sean Choi"
             ]
         },
         "year": 3,
@@ -256,8 +242,14 @@
         "description": "Overview of computer systems. Instruction set architecture. Quantitative analysis. Computer arithmetic. CPU datapath design. CPU control design. Pipelining. Data/control hazards. Memory hierarchies and management. Introduction of multiprocessor systems. Hardware description languages. Laboratory project consists of a design of a pipeline.",
         "lab": true,
         "schedule": {
-            "spring": [
+            "fall": [
                 "Younghyun Cho"
+            ],
+            "winter": [
+                "Yan Cui"
+            ],
+            "spring": [
+                "Weija Shang"
             ]
         },
         "year": 4,
@@ -274,13 +266,13 @@
         "lab": true,
         "schedule": {
             "fall": [
-                "Kai Lukoff"
+                "Xiao Li"
             ],
             "winter": [
                 "Michael Schimpf"
             ],
             "spring": [
-                "Xiao Li"
+                "Kai Lukoff"
             ]
         },
         "year": 4,

@@ -117,6 +117,7 @@
         display: flex;
         background-color: #08347a;
         border-radius: 5px;
+        border: 2px solid white;
         width: 80%;
         height: 80%;
         position: relative;
@@ -134,7 +135,7 @@
 
     .class-selector {
         overflow-y: auto;
-        padding: 1em;
+        padding: 0 1em;
         min-width: 20%;
     }
 
@@ -168,7 +169,7 @@
     }
 
     .class-breakdown {
-        padding: 2em;
+        padding: 1em;
     }
 
     .class-info-header {
