@@ -109,7 +109,7 @@ int main() {
 g++ -std=c++20 -Wall -Wextra program.cpp -o program
 ```
 
-**To see more information about installation, refer to our [C Tutorial](c.md).**
+**To see more information about installation, refer to our [C Tutorial](c).**
 
 ## Basic Syntax and Structure
 
