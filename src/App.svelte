@@ -6,6 +6,8 @@
   import NavBar from './components/NavBar.svelte';
   import Academics from './routes/Academics.svelte';
   import CSENGlossary from './routes/CSENGlossary.svelte';
+  import Career from './routes/Career.svelte';
+  import ResumeGuide from './routes/ResumeGuide.svelte';
 
   export let url = "";
   let hidden = true;
@@ -44,6 +46,8 @@
     <Route path="/"><Home /></Route>
     <Route path="academics"><Academics/></Route>
     <Route path="academics/csen-glossary"> <CSENGlossary/> </Route>
+    <Route path="career"><Career/></Route>
+    <Route path="career/resume-guide"> <ResumeGuide/> </Route>
   </div>
 </Router>
 
