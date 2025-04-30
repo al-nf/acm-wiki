@@ -20,6 +20,7 @@
     "cytoscape": "^3.31.0",
     "husky": "^9.1.7",
     "marked": "^15.0.1",
-    "svelte-routing": "^2.13.0"
+    "svelte-routing": "^2.13.0",
+    "svelte-select": "^5.8.3"
   }
 }
