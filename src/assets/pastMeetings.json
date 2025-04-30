@@ -1,0 +1,194 @@
+[
+    {
+        "id": 20230926,
+        "name": "Welcome to ACM",
+        "link": "https://drive.google.com/file/d/1m1AcTqmQ2z0bjn1O40UaKtEjw2VGH3t9/view?usp=sharing",
+        "event": "General Event",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20230928,
+        "name": "Intro to Career Development",
+        "link": "https://drive.google.com/file/d/1AfufR7UQB7FDq3Y-RkyaSbOr6-y2GEUG/view?usp=sharing",
+        "event": "Career Development",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231003,
+        "name": "Intro to Python",
+        "link": "https://drive.google.com/file/d/1gArZjEUqu4M6dbF5PVUUfC1HInfdID6i/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231005,
+        "name": "Interviewing 101",
+        "link": "https://drive.google.com/file/d/1_xq55ePbXo8fxU_hBFZ3P11lFaefo2Iq/view?usp=sharing",
+        "event": "Career Development",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231010,
+        "name": "Flask Workshop",
+        "link": "https://drive.google.com/file/d/1OoyXGXS3s45EeyHlDrfdAhRhsFS4zbTb/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231012,
+        "name": "Intro to Personal Projects",
+        "link": "https://drive.google.com/file/d/1saDFw6yLMhJMvWz5uCD7IOdkuhxhPblf/view?usp=sharing",
+        "event": "Career Development",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231017,
+        "name": "Git & Command Line",
+        "link": "https://drive.google.com/file/d/162P57xrDu5kCIhpl4_OjBSJVVQ8rfHx6/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id":20231019,
+        "name": "Hidden Perks of SCU",
+        "link": "https://drive.google.com/file/d/1VzoNBgLCaxTOkyZZ5nCoz-K0X8QfAb76/view?usp=sharing",
+        "event":"Career Development",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231024,
+        "name": "Web Development Workshop",
+        "link": "https://drive.google.com/file/d/12wNlWqm1q1OwPvfKW3FhtNtjGD44jre2/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231102,
+        "name": "Different Careers in Tech",
+        "link": "https://drive.google.com/file/d/1HCYtalP9P-R7aC-ItVty0j84L26hjZmN/view?usp=sharing",
+        "event":"Career Development",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231107,
+        "name": "INRIX Prep",
+        "link": "https://drive.google.com/file/d/17DPHGSUVUsxpadA9XG9P2-ICDBtHROpj/view?usp=sharing",
+        "event": "Hackathon Prep",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20231109,
+        "name": "AWS Workshop",
+        "link": "https://drive.google.com/file/d/1IfpdUrIkoF7n6_0Y806Ia_7qYT62m2Kd/view?usp=sharing",
+        "event":"Technical Workshop",
+        "year": 2023,
+        "quarter": "Fall"
+    },
+    {
+        "id": 20240125,
+        "name": "Personal Websites",
+        "link": "https://drive.google.com/file/d/1NgPIQ1WnQFOjO3dMlz0z4iaSM38JzoHG/view?usp=sharing",
+        "event":"Career Development",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240130,
+        "name": "Backend Development Workshop",
+        "link": "https://drive.google.com/file/d/1ermBxI_hcmgFlQUFvpBZw0tzsYvYECID/view?usp=sharing",
+        "event":"Technical Workshop",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240206,
+        "name": "Flutter Workshop",
+        "link": "https://drive.google.com/file/d/1rvPz0BsdnppfSJUAY9MJCZk65Cbc20a2/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240208,
+        "name": "Chrome Extensions",
+        "link": "https://drive.google.com/file/d/1WAtv5EAhngpO5mPLFmgr2DXy9NsdU_mc/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240213,
+        "name": "H4H Info Night",
+        "link": "https://drive.google.com/file/d/1bBQ1lmqyQvx-UxcDnf_ZMQkcEhY3XKW3/view?usp=sharing",
+        "event": "Hackathon Prep",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240227,
+        "name": "OpenAI Workshop",
+        "link": "https://drive.google.com/file/d/1dsLFTdFZitsQkwKDTpNRN1fPP84jcQ7C/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240305,
+        "name": "Intro to Video Game Development",
+        "link": "https://drive.google.com/file/d/14M_ZVYKm9eAEDeVEWys1pFMZwTz7nKJm/view?usp=sharing",
+        "event": "Underclassmen Reps Event",
+        "year": 2024,
+        "quarter": "Winter"
+    },
+    {
+        "id": 20240410,
+        "name": "ACM Board Applications",
+        "link": "https://drive.google.com/file/d/1JpZRmERhXlDwM2gfGhXvS9-9N4-_MscR/view?usp=sharing",
+        "event": "General Event",
+        "year": 2024,
+        "quarter": "Spring"
+    },
+    {
+        "id": 20240411,
+        "name": "Roblox Studio Workshop",
+        "link": "https://drive.google.com/file/d/1R8G1fZCDSXdzVi2DewPYpMrs34-Yi1ps/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Spring"
+    },
+    {
+        "id": 20240418,
+        "name": "Three.js Workshop",
+        "link": "https://drive.google.com/file/d/1J1h30X6iadMONCQOJUOowox7n2b9iLGv/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Spring"
+    },
+    {
+        "id": 20240423,
+        "name": "Docker Workshop",
+        "link": "https://drive.google.com/file/d/1BJ4IF5YW4Th3zgma9JwuiQqz5rK4fyi0/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Spring"
+    },
+    {
+        "id": 20240425,
+        "name": "Intro to Project Management",
+        "link": "https://drive.google.com/file/d/1QXK_Bhmik_0tlz5DSFMEumC7u7JElVAD/view?usp=sharing",
+        "event": "Technical Workshop",
+        "year": 2024,
+        "quarter": "Spring"
+    }
+]
