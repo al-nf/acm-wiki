@@ -374,7 +374,7 @@
         />
         <div class="graph-container">
             <div class="graph-header">
-                <h1>CSEN Glossary</h1>
+                <h1>CSEN Glossary | 2025-2026</h1>
                 <button onclick={() => (openInfo = !openInfo)}>
                     <img src={infoIcon} alt="information button" />
                 </button>
@@ -450,7 +450,6 @@
 
     .graph-container {
         width: 80%;
-        padding: 1em;
     }
 
     .graph-header {

@@ -493,7 +493,7 @@ The last thing to look out for in dynamic memory allocation are **segmentation f
 
 ## Further Learning
 
-Our C++ tutorial! (add a link here later)
+[Our C++ tutorial](cpp)
 
 Useful Practice:
 - [C Quiz from W3Schools](https://www.w3schools.com/c/c_quiz.php)

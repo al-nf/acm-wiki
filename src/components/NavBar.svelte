@@ -12,6 +12,7 @@
         <NavItem name="Home" route="/"/>
         <NavItem name="Tutorials" route="/tutorials"/>
         <NavItem name="Academics" route="/academics"/>
+        <NavItem name="Career" route="/career"/>
     </div>
 </nav>
 

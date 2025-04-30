@@ -14,6 +14,11 @@
             imgSrc: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
         },
         {
+            name: "C++",
+            link: "tutorials/cpp",
+            imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png",
+        },
+        {
             name: "Python",
             link: "tutorials/python",
             imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
