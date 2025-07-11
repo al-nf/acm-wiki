@@ -29,6 +29,11 @@
             imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png",
         },
         {
+            name: "Rust",
+            link: "tutorials/rust",
+            imgSrc: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Original_Ferris.svg",
+        },
+        {
             name: "Eduroam",
             link: "tutorials/eduroam",
             imgSrc: "https://upload.wikimedia.org/wikipedia/commons/8/8a/0207a74a86c5255a9d6458e587f1e9e4-flat-wifi-icon-by-vexels.png",
